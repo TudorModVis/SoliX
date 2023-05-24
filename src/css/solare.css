@@ -1,0 +1,29 @@
+#nor1 {
+    animation: nori2 20s linear, nori 40s infinite linear 20s;
+}
+
+#nor2 {
+    animation:  nori2 44s linear, nori 40s infinite linear 44s;
+}
+
+#nor3 {
+    animation:  nori2 35s linear, nori 40s infinite linear 33s;
+}
+
+#nor4 {
+    animation:  nori2 34s linear, nori 40s infinite linear 34s;
+}
+
+#nor5 {
+    animation: nori2 50s linear, nori 40s infinite linear 50s;
+}
+
+@keyframes nori {
+    from {transform: translateX(100vw);}
+    to {transform: translateX(-50vw);}
+}
+
+@keyframes nori2 {
+    to {transform: translateX(-50vw);}
+}
+
