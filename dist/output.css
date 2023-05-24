@@ -1425,6 +1425,32 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-\[0\.7s\]{
+  transition-property: 0.7s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-\[700ms\]{
+  transition-property: 700ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-500{
+  transition-duration: 500ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
+}
+
 /* -------- General Specifications -------- */
 
 html {
@@ -1442,6 +1468,10 @@ html {
   html {
     font-size: 20px;
   }
+}
+
+body {
+  background-color: #1E1E1E;
 }
 
 h1 {
@@ -1744,6 +1774,16 @@ body.fp-responsive::-webkit-scrollbar {
 .fp-scrollable.fp-responsive .fp-is-overflow.fp-section:not(.fp-auto-height):not([data-percentage]) {
   min-height: 100vh;
   /* min-height: calc(var(--vh,1vh) * 100); */
+}
+
+.hover\:bg-\[\#F1F1F1\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
+}
+
+.hover\:text-\[\#00ACBE\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 172 190 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1024px){
