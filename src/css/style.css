@@ -95,7 +95,6 @@ header .menu-btn {
     padding: 0;
     width: 30px;
     cursor: pointer;
-    z-index: 2;
 }
 
 header .menu-btn .line {
