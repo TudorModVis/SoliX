@@ -6,7 +6,7 @@ const house = document.querySelector('#house');
 const circleLeft = document.querySelector('#circle-left');
 const circleRight = document.querySelector('#circle-right');
 const logo = document.getElementById('logo');
-const adLines = document.querySelectorAll('.ad-line');
+const adLines = document.querySelectorAll('.adv-line');
 
 const page = new fullpage('#fullpage', {
     navigation: true,

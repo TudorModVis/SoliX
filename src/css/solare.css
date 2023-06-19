@@ -63,15 +63,15 @@ header .menu-btn .line.line--2.line-fade-out {
     background-color: #f1f1f1;
 }
 
-.ad-line.active {
+.adv-line.active {
     animation: line 1s forwards;
 }
 
-.ad-line.--1.active {
+.adv-line.--1.active {
     animation-delay: 150ms;
 }
 
-.ad-line.--2.active {
+.adv-line.--2.active {
     animation-delay: 300ms;
 }
 
