@@ -42,9 +42,9 @@
             </div>
             
             <a href=""><img src="images/logo.png" alt="" class="h-[4.5vh] lg:h-[6.5vh] max-h-[60px] w-auto"></a>
-            <div class="lg:flex gap-[3vw] hidden font-semibold">
+            <div class="lg:flex gap-[3vw] hidden">
                 <a href="" class="font-bold">Acasă</a>
-                <a href="">Panouri Solare</a>
+                <a href="pages/fotovoltaice.html">Panouri Solare</a>
                 <a href="">Construcții Modulare</a>
                 <a href="">Panouri Sandwich</a>
                 <a href="">Contacte</a>
@@ -55,51 +55,31 @@
     <div class="menu fixed w-screen h-screen bg-[#1E1E1E] top-0 right-0 z-10 px-[25px] overflow-y-scroll translate-x-full">
         <nav class="flex flex-col my-[150px] text-[1.75rem] gap-[40px]">
             <div>
-                <div class="link relative">
+                <div class="link unfold relative">
                     <span class="font-bold">Acasă</span>
                     <img src="images/HOME/menu arrow.png" alt="" class="absolute h-full top-0 right-0 py-[7px]">
                 </div>
                 <div class="sections flex flex-col gap-[15px] h-0">
-                    <a href="" class="text-[1.6rem] opacity-0">Servicii</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Colaborare</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Proiecte</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Sponsori</a>
+                    <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(1);">Acasă</a>
+                    <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(2);">Servicii</a>
+                    <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(3);">Colaborare</a>
+                    <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(4);">Proiecte</a>
+                    <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(5);">Sponsori</a>
                 </div>
             </div>
             <div>
                 <div class="link relative">
-                    <span class="font-semibold">Panouri Solare</span>
-                    <img src="images/HOME/menu arrow.png" alt="" class="absolute h-full top-0 right-0 py-[7px]">
-                </div>
-                <div class="sections flex flex-col gap-[15px] h-0">
-                    <a href="" class="text-[1.6rem] opacity-0">Servicii</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Colaborare</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Proiecte</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Sponsori</a>
+                    <a class="font-semibold" href="pages/fotovoltaice.html">Panouri Solare</a>
                 </div>
             </div>
             <div>
                 <div class="link relative">
-                    <span class="font-semibold 2xl:min-w-max">Construcții Modulare</span>
-                    <img src="images/HOME/menu arrow.png" alt="" class="absolute h-full top-0 right-0 py-[7px]">
-                </div>
-                <div class="sections flex flex-col gap-[15px] h-0">
-                    <a href="" class="text-[1.6rem] opacity-0">Servicii</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Colaborare</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Proiecte</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Sponsori</a>
+                    <a class="font-semibold 2xl:min-w-max" href="">Construcții Modulare</a>
                 </div>
             </div>
             <div>
                 <div class="link relative">
-                    <span href="" class="font-semibold">Panouri Sandwich</span>
-                    <img src="images/HOME/menu arrow.png" alt="" class="absolute h-full top-0 right-0 py-[7px]">
-                </div>
-                <div class="sections flex flex-col gap-[15px] h-0">
-                    <a href="" class="text-[1.6rem] opacity-0">Servicii</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Colaborare</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Proiecte</a>
-                    <a href="" class="text-[1.6rem] opacity-0">Sponsori</a>
+                    <a href="" class="font-semibold">Panouri Sandwich</a>
                 </div>
             </div>
             <div class="link relative">
@@ -222,10 +202,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                        <div class="glass hidden 2xl:block">
-                            
                     </div>
 
                     <div class="flex-1 items-center hidden lg:flex 2xl:hidden overflow-hidden w-full lg:w-[78vw] lg:ml-[-3vw]">
@@ -475,21 +451,27 @@
                         </div>
                     </div>
                 </div>
-                <footer class="px-[25px] lg:px-[7.5vw] flex flex-col lg:flex-row justify-between items-center bg-[#0E0E0E] py-[50px] lg:py-[3.7vh] relative">
-                        <div class="flex flex-col lg:flex-row gap-[2.5vw] items-center">
-                            <img src="images/HOME/solixmark.png" alt="" class="w-[60%] lg:w-[6.2vw] mb-[30px] lg:mb-0">
-                            <div class="flex flex-col justify-center gap-[2.3vh]">
-                                <p class="text-sm text-[#5E5E5E] mb-[15px] lg:mb-0">Pentru o ofertă individuală</p>
-                                <button class="bg-[#212121] bg-opacity-50 border-[0.5px] border-[#F1F1F1] border-opacity-50 text-sm w-full py-[1vh] rounded-[10px]">Contactează-ne</button>
+                <footer class="px-[25px] lg:px-[7.5vw] flex flex-col lg:flex-row justify-between items-center bg-[#0E0E0E] py-[50px] lg:pt-[3.7vh] lg:pb-[15px] relative">
+                        <div>
+                            <div class="flex flex-col lg:flex-row gap-[2.5vw] items-center">
+                                <img src="images/HOME/solixmark.png" alt="" class="w-[60%] lg:w-[6.2vw] mb-[30px] lg:mb-0">
+                                <div class="flex flex-col justify-center gap-[2.3vh]">
+                                    <p class="text-sm text-[#5E5E5E] mb-[15px] lg:mb-0">Pentru o ofertă individuală</p>
+                                    <button class="bg-[#212121] hover:bg-[#f1f1f1] bg-opacity-50 hover:text-[#212121] border-[0.5px] border-[#F1F1F1] border-opacity-50 text-sm w-full py-[1vh] rounded-[10px] transition duration-300">Contactează-ne</button>
+                                </div>
                             </div>
+                            <p class="mt-[3vh] text-sm text-[#5E5E5E] hidden lg:block">Copyright © 2023 SOLIX All rights reserved</p>
                         </div>
-                        <div class="flex gap-[1.8vw] mt-[50px] mb-[75px] lg:my-0 w-[80%] lg:w-auto justify-between">
-                            <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/watsapp.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
-                            <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/insta.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
-                            <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/facebook.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
-                            <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/viber.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
+                        <div class="w-[70%] lg:w-auto">
+                            <div class="flex gap-[1.8vw] mt-[60px] mb-[70px] lg:my-0 lg:w-auto justify-between">
+                                <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/watsapp.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
+                                <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/insta.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
+                                <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/facebook.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
+                                <a href="" class="w-[15%] lg:w-auto"><img src="images/HOME/SOCIALS/viber.png" alt="" class="w-full lg:w-[2.2vw] max-w-[45px] object-contain"></a>
+                            </div>
+                            <span class="text-sm text-[#5E5E5E] absolute bottom-[15px] hidden lg:block">Powered by Modern Vision <img src="images/HOME/mod.svg" alt="" class="inline"></span>
                         </div>
-                        <div class="text-center relative lg:absolute lg:left-1/2 lg:translate-x-[-50%]">
+                        <div class="text-center relative lg:absolute lg:left-1/2 lg:translate-x-[-50%] lg:hidden">
                             <p class="mb-[20px] lg:mb-[2.3vh] text-sm text-[#5E5E5E]">Copyright © 2023 SOLIX All rights reserved</p>
                             <span class="text-sm text-[#5E5E5E]">Powered by Modern Vision <img src="images/HOME/mod.svg" alt="" class="inline"></span>
                         </div>

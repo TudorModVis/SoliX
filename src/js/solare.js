@@ -1,17 +1,285 @@
-anime({
-    targets: '#cer',
-    points: [
-        { value: [
-          '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369',
-          '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369']
-        },
-        { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
-        { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
-        { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
-      ],
-    easing: 'easeOutQuad',
-    duration: 2000,
-    loop: true
-  });
+// -------- FullPage Specification -------- //
 
-  
+const header = document.querySelector('header');
+const iarba = document.querySelector('#iarba');
+const house = document.querySelector('#house');
+const circleLeft = document.querySelector('#circle-left');
+const circleRight = document.querySelector('#circle-right');
+const logo = document.getElementById('logo');
+const adLines = document.querySelectorAll('.ad-line');
+
+const page = new fullpage('#fullpage', {
+    navigation: true,
+    navigationPosition: 'left',
+    navigationTooltips: ['ACASĂ', 'AVANTAJE', 'SERVICII', 'PROCESUL', 'PROIECTE'],
+    showActiveTooltip: true,
+    licenseKey: 'gplv3-license',
+    responsiveWidth: 1024,
+    verticalCentered: false,
+    onLeave: function(origin, destination, direction, trigger){
+        if (window.innerWidth <= 1024) return;
+
+        if (origin.index == 0) {
+            header.classList.add('alt');
+            logo.src = '../images/logo.png';
+            iarba.classList.add('open');
+            house.classList.add('open');
+        }
+
+        if (destination.index == 0) {
+            header.classList.remove('alt');
+            logo.src = '../images/logo-black.png';
+            iarba.classList.remove('open');
+            house.classList.remove('open');
+
+            circleLeft.style.left = '-50vw';
+            circleRight.style.right = '-50vw';
+        }
+
+        if (destination.index == 1) {
+            circleLeft.style.left = '-10vw';
+            circleLeft.style.bottom = '-25vh';
+
+            circleRight.style.right = '-10vw';
+            circleRight.style.top = '10vh';
+
+            adLines.forEach(line => {
+              line.classList.add('active');
+            });
+        }
+
+        if (origin.index == 1) {
+          adLines.forEach(line => {
+            line.classList.remove('active');
+          });
+        }
+
+        if (destination.index == 3) {
+          showSteps();
+        }
+	}
+});
+
+// -------- Smooth -------- //
+
+const steps = document.querySelectorAll('.steps div');
+
+function showSteps() {
+  anime({
+    targets: steps,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    duration: 300,
+    easing: 'easeOutSine',
+    delay: anime.stagger(150, {start: 400})
+  });
+}
+
+
+
+// -------- Scroll Mobile -------- //
+
+const serviceSection = document.querySelector('#service');
+
+function scrollMobile() {
+    if (window.innerWidth > 1023) return;
+
+    if (serviceSection.getBoundingClientRect().top < 10) {
+        circleLeft.style.left = '-150px';
+        circleRight.style.right = '-150px';
+        header.classList.add('mobile');
+        logo.src = '../images/logo.png';
+    }
+    else {
+        circleLeft.style.left = '-350px';
+        circleRight.style.right = '-350px';
+        header.classList.remove('mobile');
+        logo.src = '../images/logo-black.png';
+    }
+} 
+
+window.addEventListener('scroll', scrollMobile);
+
+// -------- Panel Carousell Mobile -------- //
+
+const mobilePanelContainer = document.querySelector('#colab .mobile');
+let panelCircles = document.querySelectorAll('#colab .circle');
+let panelStartX = 0, panelDist = 0, panelIndex = 0;
+
+function touchStart(e) {
+    let touchobj = e.changedTouches[0];
+    panelStartX = parseInt(touchobj.clientX);
+}
+
+function touchMove(e) {
+    let touchobj = e.changedTouches[0];
+    panelDist = parseInt(touchobj.clientX) - panelStartX;
+
+}
+
+function touchEnd() {
+    if (panelDist > 50) {
+        moveLeft();
+     } else if (panelDist < -50) {
+        moveRight();
+     }
+     panelDist = 0;
+}
+
+const mobilePanels = mobilePanelContainer.querySelectorAll('.panel');
+
+mobilePanels.forEach (panel => {
+    panel.addEventListener('touchstart', touchStart);
+    panel.addEventListener('touchmove', touchMove);
+    panel.addEventListener('touchend', touchEnd);
+});
+
+function moveRight() {
+  let tempContainer;
+  tempContainer = mobilePanelContainer;
+
+  let widthPanel = tempContainer.querySelector('.first');
+  let panels = tempContainer.querySelectorAll('.panel');
+  panelCircles = tempContainer.querySelectorAll('.circle');
+
+  var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+  const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+  panelIndex++;
+
+  if (panelIndex >= panels.length) {
+      panelIndex--;
+      return;
+  }
+  tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+}
+
+function moveLeft() {
+  let tempContainer;
+  tempContainer = mobilePanelContainer;
+
+  let widthPanel = tempContainer.querySelector('.first');
+  panelCircles = tempContainer.querySelectorAll('.circle');
+
+  var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+  const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+  panelIndex--;
+
+  if (panelIndex < 0) {
+      panelIndex = 0;
+      return;
+  }
+
+  tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+}
+
+const leftArrows = document.querySelectorAll('#colab .arrow.left');
+const rightArrows = document.querySelectorAll('#colab .arrow.right');
+
+leftArrows.forEach(arrow => {
+    arrow.addEventListener('click', moveLeft);
+});
+
+rightArrows.forEach(arrow => {
+    arrow.addEventListener('click', moveRight);
+})
+
+function cirlceMove(event) {
+  tempContainer = mobilePanelContainer;
+
+  let panels = tempContainer.querySelectorAll('.panel');
+  panelCircles = panels[panelIndex].querySelectorAll('.circle');
+  let widthPanel = tempContainer.querySelector('.first');
+
+  var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+  const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+
+  for (let i = 0; i < panelCircles.length; i++) {
+      if (panelCircles[i].isEqualNode(event.target)) {
+          panelIndex = i;
+          tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+          return;
+      }
+  }
+}
+
+panelCircles.forEach (circle => {
+  circle.addEventListener('click', cirlceMove);
+});
+
+
+// -------- Menu -------- //
+
+function openMenu() {
+  menu.classList.toggle('active');
+
+  lineOne.classList.toggle('line-cross');
+  lineTwo.classList.toggle('line-fade-out');
+  lineThree.classList.toggle('line-cross');
+
+  if (menu.classList.contains('active')) {
+    fullpage_api.setAllowScrolling(false);
+    logo.src = '../images/logo.png';
+    header.classList.toggle('menu');
+      setTimeout(() => {
+          anime({
+              targets: menuLinks,
+              translateX: [100, 0],
+              duration: 1500,
+              opacity: 1,
+              delay: anime.stagger(100)
+          });
+      }, 400);
+  } else {
+      fullpage_api.setAllowScrolling(true);
+      closeSection();
+
+      if (!header.classList.contains('mobile')) logo.src = '../images/logo-black.png';
+      setTimeout(() => { header.classList.toggle('menu'); }, 500)
+
+      anime({
+          targets: menuLinks,
+          translateX: 100,
+          duration: 1500,
+          opacity: 0,
+          delay: anime.stagger(100)
+      });
+  }
+}
+
+function closeSection() {
+    const link = document.querySelector('.unfold');
+    const arrow = link.querySelector('img');
+    const sections = link.nextElementSibling;
+    const items = sections.querySelectorAll('a');
+
+    arrow.classList.toggle('open');
+
+    anime.remove(items);
+    anime({
+      targets: items,
+      opacity:0,
+      duration: 200,
+      easing: 'easeOutCubic',
+      complete: () => {
+          sections.classList.remove('open');
+      }
+    });
+    anime({
+      targets: sections,
+      height: 0,
+      duration: 400,
+      easing: 'easeOutCubic',
+      complete() {
+      }
+    });
+}
+
+menuButton.addEventListener('click', openMenu);
+
+const sectionLinks =  document.querySelectorAll('.sections a');
+
+sectionLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        openMenu();
+    })
+})

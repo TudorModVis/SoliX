@@ -3,6 +3,8 @@
 const circles = document.querySelectorAll('.background .circle');
 
 function moveCircles(event) {
+    if (window.innerWidth < 1024) return;
+    
     let x = (event.pageX / window.innerWidth - 0.5) ;
     let y = (event.pageY / window.innerHeight - 0.5);
 
@@ -42,43 +44,11 @@ anime({
 const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-btn')
 const menuLinks = menu.querySelectorAll('.link');
+const currentLinks = menu.querySelectorAll('.unfold');
 
 const lineOne = menuButton.querySelector('.line--1');
 const lineTwo = menuButton.querySelector('.line--2');
 const lineThree = menuButton.querySelector('.line--3');
-
-function openMenu() {
-    menu.classList.toggle('active');
-
-    lineOne.classList.toggle('line-cross');
-    lineTwo.classList.toggle('line-fade-out');
-    lineThree.classList.toggle('line-cross');
-
-    if (menu.classList.contains('active')) {
-    header.classList.toggle('menu');
-        setTimeout(() => {
-            anime({
-                targets: menuLinks,
-                translateX: [100, 0],
-                duration: 1500,
-                opacity: 1,
-                delay: anime.stagger(100)
-            });
-        }, 400);
-    } else {
-        setTimeout(() => { header.classList.toggle('menu'); }, 500)
-        
-        anime({
-            targets: menuLinks,
-            translateX: 100,
-            duration: 1500,
-            opacity: 0,
-            delay: anime.stagger(100)
-        });
-    }
-}
-
-menuButton.addEventListener('click', openMenu);
 
 function revealSections(event) {
     const link = event.currentTarget;
@@ -94,9 +64,7 @@ function revealSections(event) {
             targets: sections,
             height: el => el.scrollHeight,
             duration: 400,
-            easing: 'easeOutCubic',
-            complete() {
-            }
+            easing: 'easeOutCubic'
         });
 
         anime({
@@ -108,15 +76,7 @@ function revealSections(event) {
         });
 
     } else {
-        anime({
-            targets: sections,
-            height: 0,
-            duration: 400,
-            easing: 'easeOutCubic',
-            complete() {
-            }
-        });
-
+        anime.remove(items);
         anime({
             targets: items,
             opacity:0,
@@ -125,11 +85,56 @@ function revealSections(event) {
             complete: () => {
                 sections.classList.remove('open');
             }
-        })
+        });
+        anime({
+            targets: sections,
+            height: 0,
+            duration: 400,
+            easing: 'easeOutCubic',
+            complete() {
+            }
+        });
     }
     
 }
 
-menuLinks.forEach(link => {
+currentLinks.forEach(link => {
     link.addEventListener("click", revealSections);
-})
+});
+
+
+// -------- Glass Panels -------- //
+
+const cards = document.querySelectorAll('.glass .panel');
+let currentCard, glassCircle;
+
+function enterCard(event) {
+    currentCard = event.currentTarget;
+    glassCircle = currentCard.querySelector('.circle-glass');
+    glassCircle.classList.remove('close');
+    glassCircle.classList.add('open');
+}
+
+function moveCard(event) {
+    let rect = currentCard.getBoundingClientRect();
+
+    glassCircle.style.left = (event.clientX - rect.left) - (glassCircle.clientHeight / 2) + 'px';
+    glassCircle.style.top = (event.clientY - rect.top) - (glassCircle.clientHeight / 2) + 'px';
+
+    let x = (event.clientY - rect.top) / currentCard.clientHeight - 0.5;
+    let y = ((event.clientX - rect.left) / currentCard.clientWidth - 0.5) * -1;
+
+    currentCard.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+}
+
+function leaveCard() {
+    currentCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    glassCircle.classList.add('close');
+    glassCircle.classList.remove('open');
+}
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', enterCard);
+    card.addEventListener('mouseleave', leaveCard);
+    card.addEventListener('mousemove', moveCard);
+});

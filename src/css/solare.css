@@ -1,29 +1,86 @@
-#nor1 {
-    animation: nori2 20s linear, nori 40s infinite linear 20s;
+.front,
+  .back{
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+    border-radius: 10px;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      text-align: center;
+      min-height: 200px;
+      height: auto;
+      border-radius: 10px;
 }
 
-#nor2 {
-    animation:  nori2 44s linear, nori 40s infinite linear 44s;
+@media (min-width: 1024px) {
+    .front,
+  .back{ 
+    min-height: 25vh;
+  }
 }
 
-#nor3 {
-    animation:  nori2 35s linear, nori 40s infinite linear 33s;
+@media (min-width: 1536px) {
+    .front,
+  .back{ 
+    min-height: 21vh;
+  }
 }
 
-#nor4 {
-    animation:  nori2 34s linear, nori 40s infinite linear 34s;
+header a{
+    transition: 0.5s;
 }
 
-#nor5 {
-    animation: nori2 50s linear, nori 40s infinite linear 50s;
+header.alt .pages{
+    color: #f1f1f1;
 }
 
-@keyframes nori {
-    from {transform: translateX(100vw);}
-    to {transform: translateX(-50vw);}
+header.mobile .menu-btn .line {
+    background-color: #f1f1f1;
 }
 
-@keyframes nori2 {
-    to {transform: translateX(-50vw);}
+#colab .mobile {
+    transition: .7s;
 }
 
+header .menu-btn .line {
+    background: #212121;
+}
+
+header .menu-btn .line.line--1.line-cross {
+    background-color: #f1f1f1;
+}
+
+header .menu-btn .line.line--3.line-cross {
+    background-color: #f1f1f1;
+}
+
+header .menu-btn .line.line--2.line-fade-out {
+    background-color: #f1f1f1;
+}
+
+.ad-line.active {
+    animation: line 1s forwards;
+}
+
+.ad-line.--1.active {
+    animation-delay: 150ms;
+}
+
+.ad-line.--2.active {
+    animation-delay: 300ms;
+}
+
+@keyframes line {
+    from {clip-path: inset(0px 100% 0px 0px);}
+    to {clip-path: inset(0px 0 0 0px);}
+}
+
+@keyframes lineReverse {
+    from {clip-path: inset(0px 0 0px 0px);}
+    to {clip-path: inset(0px 100% 0 0px);}
+}

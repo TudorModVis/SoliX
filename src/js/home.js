@@ -157,42 +157,6 @@ function circleOn(event) {
 
 slider.addEventListener('mouseenter', circleOn);
 
-// -------- Glass Panels -------- //
-
-const cards = document.querySelectorAll('.glass .panel');
-let currentCard, glassCircle;
-
-function enterCard(event) {
-    currentCard = event.currentTarget;
-    glassCircle = currentCard.querySelector('.circle-glass');
-    glassCircle.classList.remove('close');
-    glassCircle.classList.add('open');
-}
-
-function moveCard(event) {
-    let rect = currentCard.getBoundingClientRect();
-
-    glassCircle.style.left = (event.clientX - rect.left) - (glassCircle.clientHeight / 2) + 'px';
-    glassCircle.style.top = (event.clientY - rect.top) - (glassCircle.clientHeight / 2) + 'px';
-
-    let x = (event.clientY - rect.top) / currentCard.clientHeight - 0.5;
-    let y = ((event.clientX - rect.left) / currentCard.clientWidth - 0.5) * -1;
-
-    currentCard.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
-}
-
-function leaveCard() {
-    currentCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    glassCircle.classList.add('close');
-    glassCircle.classList.remove('open');
-}
-
-cards.forEach(card => {
-    card.addEventListener('mouseenter', enterCard);
-    card.addEventListener('mouseleave', leaveCard);
-    card.addEventListener('mousemove', moveCard);
-});
-
 
 // -------- Panel Carousell -------- //
 
@@ -317,6 +281,79 @@ mobilePanels.forEach (panel => {
     panel.addEventListener('touchend', touchEnd);
 });
 
+// -------- Menu -------- //
+
+function openMenu() {
+    menu.classList.toggle('active');
+
+    lineOne.classList.toggle('line-cross');
+    lineTwo.classList.toggle('line-fade-out');
+    lineThree.classList.toggle('line-cross');
+
+    if (menu.classList.contains('active')) {
+        fullpage_api.setAllowScrolling(false);
+        header.classList.toggle('menu');
+        setTimeout(() => {
+            anime({
+                targets: menuLinks,
+                translateX: [100, 0],
+                duration: 1500,
+                opacity: 1,
+                delay: anime.stagger(100)
+            });
+        }, 400);
+    } else {
+        fullpage_api.setAllowScrolling(true);
+        closeSection();
+        setTimeout(() => { header.classList.toggle('menu'); }, 500)
+        
+        anime({
+            targets: menuLinks,
+            translateX: 100,
+            duration: 1500,
+            opacity: 0,
+            delay: anime.stagger(100)
+        });
+    }
+}
+
+menuButton.addEventListener('click', openMenu);
+
+const sectionLinks =  document.querySelectorAll('.sections a');
+
+sectionLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        openMenu();
+    })
+});
+
+function closeSection() {
+    const link = document.querySelector('.unfold');
+    const arrow = link.querySelector('img');
+    const sections = link.nextElementSibling;
+    const items = sections.querySelectorAll('a');
+
+    arrow.classList.toggle('open');
+
+    anime.remove(items);
+    anime({
+      targets: items,
+      opacity:0,
+      duration: 200,
+      easing: 'easeOutCubic',
+      complete: () => {
+          sections.classList.remove('open');
+      }
+    });
+    anime({
+      targets: sections,
+      height: 0,
+      duration: 400,
+      easing: 'easeOutCubic',
+      complete() {
+      }
+    });
+}
 
 // -------- Scroll Mobile -------- //
 
@@ -335,8 +372,6 @@ function scrollMobile() {
         circleRight.style.right = '-350px';
         header.classList.remove('mobile');
     }
-
-
 } 
 
 window.addEventListener('scroll', scrollMobile);
