@@ -333,7 +333,7 @@ function closeSection() {
     const sections = link.nextElementSibling;
     const items = sections.querySelectorAll('a');
 
-    arrow.classList.toggle('open');
+    arrow.classList.remove('open');
 
     anime.remove(items);
     anime({
