@@ -155,7 +155,7 @@ function openSocialMenu(event) {
             return -80 * i;
         },
         easing: 'easeOutQuad',
-        duration: 500,
+        duration: 300,
         delay: anime.stagger(50),
     });
 }
