@@ -399,8 +399,3 @@ function scrollMobile() {
 } 
 
 window.addEventListener('scroll', scrollMobile);
-
-
-document.getElementById('panouri-solare').addEventListener('click', () => {
-    window.open('../pages/fotovoltaice.html');
-})
