@@ -1420,6 +1420,10 @@ video {
   line-height: 1.25;
 }
 
+.leading-none{
+  line-height: 1;
+}
+
 .tracking-wide{
   letter-spacing: 0.025em;
 }
@@ -2379,12 +2383,20 @@ body.fp-responsive::-webkit-scrollbar {
     gap: 25px;
   }
 
+  .\32xl\:whitespace-nowrap{
+    white-space: nowrap;
+  }
+
   .\32xl\:pb-\[3\.5vh\]{
     padding-bottom: 3.5vh;
   }
 
   .\32xl\:pt-9{
     padding-top: 2.25rem;
+  }
+
+  .\32xl\:text-\[5rem\]{
+    font-size: 5rem;
   }
 
   .\32xl\:text-base{
@@ -2395,10 +2407,6 @@ body.fp-responsive::-webkit-scrollbar {
   .\32xl\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .\32xl\:text-\[5rem\]{
-    font-size: 5rem;
   }
 }
 
