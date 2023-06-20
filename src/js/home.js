@@ -6,6 +6,8 @@ const house = document.querySelector('#house');
 const circleLeft = document.querySelector('#circle-left');
 const circleRight = document.querySelector('#circle-right');
 
+const socialMenu = document.querySelector('.social-menu');
+
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
@@ -15,6 +17,28 @@ const page = new fullpage('#fullpage', {
     responsiveWidth: 1024,
     verticalCentered: false,
     onLeave: function(origin, destination, direction, trigger){
+        if (destination.index == 4) {
+            anime({
+                targets: socialMenu,
+                opacity: 0,
+                easing: 'easeOutQuad',
+                duration: 300,
+                complete: () => {
+                    socialMenu.style.display = 'none';
+                }
+            });
+        }
+
+        if (origin.index == 4) {
+            socialMenu.style.display = 'block';
+            anime({
+                targets: socialMenu,
+                opacity: 1,
+                easing: 'easeOutQuad',
+                duration: 300,
+            });
+        }
+
         if (window.innerWidth <= 1024) return;
 
         if (origin.index == 0) {

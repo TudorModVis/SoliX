@@ -444,6 +444,26 @@ footer a:hover img {
             transform-style: preserve-3d;
   }
 
+.social-menu .first {
+    animation: firstSocial 1.5s infinite;
+}
+
+.social-menu .first.active {
+    animation: none;
+}
+
+.social-menu .first.active a img {
+    display: block;
+}
+
+.social-menu .first.active > img {
+    display: none;
+}
+
+@keyframes firstSocial {
+    0%, 100% {transform: scale(1)}
+    50% {transform: scale(1.1);}
+}
 
 /* -------- Full Page Configuration -------- */
 

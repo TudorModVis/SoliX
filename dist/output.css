@@ -608,6 +608,10 @@ video {
   bottom: 5%;
 }
 
+.bottom-\[50px\]{
+  bottom: 50px;
+}
+
 .bottom-\[6\%\]{
   bottom: 6%;
 }
@@ -652,6 +656,10 @@ video {
   right: 103%;
 }
 
+.right-\[50px\]{
+  right: 50px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -678,6 +686,10 @@ video {
 
 .top-\[30\%\]{
   top: 30%;
+}
+
+.right-\[25px\]{
+  right: 25px;
 }
 
 .z-10{
@@ -865,6 +877,10 @@ video {
   height: 40px;
 }
 
+.h-\[5\.3vh\]{
+  height: 5.3vh;
+}
+
 .h-\[50px\]{
   height: 50px;
 }
@@ -922,22 +938,6 @@ video {
   height: 100vh;
 }
 
-.h-\[6vh\]{
-  height: 6vh;
-}
-
-.h-\[5vh\]{
-  height: 5vh;
-}
-
-.h-\[5\.5vh\]{
-  height: 5.5vh;
-}
-
-.h-\[5\.3vh\]{
-  height: 5.3vh;
-}
-
 .max-h-\[13\%\]{
   max-height: 13%;
 }
@@ -972,10 +972,6 @@ video {
 
 .max-h-\[9\%\]{
   max-height: 9%;
-}
-
-.w-\[1\%\]{
-  width: 1%;
 }
 
 .w-\[10px\]{
@@ -1014,12 +1010,24 @@ video {
   width: 25%;
 }
 
+.w-\[28px\]{
+  width: 28px;
+}
+
 .w-\[30\%\]{
   width: 30%;
 }
 
 .w-\[300px\]{
   width: 300px;
+}
+
+.w-\[30px\]{
+  width: 30px;
+}
+
+.w-\[35px\]{
+  width: 35px;
 }
 
 .w-\[60\%\]{
@@ -1036,6 +1044,10 @@ video {
 
 .w-\[70\%\]{
   width: 70%;
+}
+
+.w-\[70px\]{
+  width: 70px;
 }
 
 .w-\[71vw\]{
@@ -1060,14 +1072,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-\[28\%\]{
-  width: 28%;
-}
-
-.w-\[29\%\]{
-  width: 29%;
 }
 
 .min-w-\[75px\]{
@@ -1440,12 +1444,12 @@ video {
   font-weight: 600;
 }
 
-.leading-tight{
-  line-height: 1.25;
-}
-
 .leading-none{
   line-height: 1;
+}
+
+.leading-tight{
+  line-height: 1.25;
 }
 
 .tracking-wide{
@@ -1937,6 +1941,32 @@ footer a:hover img {
   transform-style: preserve-3d;
 }
 
+.social-menu .first {
+  animation: firstSocial 1.5s infinite;
+}
+
+.social-menu .first.active {
+  animation: none;
+}
+
+.social-menu .first.active a img {
+  display: block;
+}
+
+.social-menu .first.active > img {
+  display: none;
+}
+
+@keyframes firstSocial {
+  0%, 100% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 /* -------- Full Page Configuration -------- */
 
 #fp-nav.fp-left {
@@ -2067,6 +2097,10 @@ body.fp-responsive::-webkit-scrollbar {
 
   .lg\:top-\[2\.3vh\]{
     top: 2.3vh;
+  }
+
+  .lg\:right-\[50px\]{
+    right: 50px;
   }
 
   .lg\:my-0{
@@ -2356,10 +2390,6 @@ body.fp-responsive::-webkit-scrollbar {
 
   .\32xl\:mt-\[17\.5vh\]{
     margin-top: 17.5vh;
-  }
-
-  .\32xl\:mt-\[7vh\]{
-    margin-top: 7vh;
   }
 
   .\32xl\:block{

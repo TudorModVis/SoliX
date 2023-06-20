@@ -138,3 +138,46 @@ cards.forEach(card => {
     card.addEventListener('mouseleave', leaveCard);
     card.addEventListener('mousemove', moveCard);
 });
+
+const socialMenues = document.querySelectorAll('.social-menu');
+let firstSocial, lastSocial;
+
+function openSocialMenu(event) {
+    const target = event.currentTarget;
+    const links = target.parentNode.querySelectorAll('div');
+    firstSocial = target;
+
+    firstSocial.classList.add('active');
+
+    anime({
+        targets: links,
+        top: function(el, i) {
+            return -80 * i;
+        },
+        easing: 'easeOutQuad',
+        duration: 500,
+        delay: anime.stagger(50),
+    });
+}
+
+function closeSocialMenu(event) {
+    const target = event.currentTarget;
+    const links = target.parentNode.querySelectorAll('div');
+
+    firstSocial.classList.remove('active');
+
+    anime({
+        targets: links,
+        top: 0,
+        easing: 'easeOutQuad',
+        duration: 300,
+    });
+}
+
+socialMenues.forEach(menu => {
+    const first = menu.querySelector('.first');
+    const last = menu.querySelector('.last');
+
+    first.addEventListener('click', openSocialMenu);
+    last.addEventListener('click', closeSocialMenu);
+})
