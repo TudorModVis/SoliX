@@ -46,7 +46,7 @@ const page = new fullpage('#fullpage', {
             header.classList.add('alt');
             iarba.classList.add('open');
             house.classList.add('open');
-            logo.src = 'images/logo.png';
+            logo.src = '../images/logo.png';
             navigationSpan.forEach(nav => nav.classList.add('white'));
             navigationText.forEach(nav => nav.classList.add('white'));
 
@@ -64,7 +64,7 @@ const page = new fullpage('#fullpage', {
 
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
-            logo.src = 'images/logo-negru.png';
+            logo.src = '../images/logo-negru.png';
             navigationSpan.forEach(nav => nav.classList.remove('white'));
             navigationText.forEach(nav => nav.classList.remove('white'));
         }
@@ -401,13 +401,13 @@ function scrollMobile() {
         circleLeft.style.left = '-150px';
         circleRight.style.right = '-150px';
         header.classList.add('mobile');
-        logo.src = 'images/logo.png';
+        logo.src = '../images/logo.png';
     }
     else {
         circleLeft.style.left = '-350px';
         circleRight.style.right = '-350px';
         header.classList.remove('mobile');
-        logo.src = 'images/logo-negru.png';
+        logo.src = '../images/logo-negru.png';
     }
 } 
 
