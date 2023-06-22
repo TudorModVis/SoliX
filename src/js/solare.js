@@ -45,28 +45,32 @@ const page = new fullpage('#fullpage', {
 
         if (origin.index == 0) {
             header.classList.add('alt');
-            logo.src = '../images/logo.png';
+            logo.src = '../images/SOLARE/logo-alb.png';
             iarba.classList.add('open');
             house.classList.add('open');
+            navigationSpan.forEach(nav => nav.classList.add('white'));
+            navigationText.forEach(nav => nav.classList.add('white'));
+
+            circleLeft.style.left = '-10vw';
+            circleLeft.style.bottom = '-25vh';
+
+            circleRight.style.right = '-10vw';
+            circleRight.style.top = '10vh';
         }
 
         if (destination.index == 0) {
             header.classList.remove('alt');
-            logo.src = '../images/logo-black.png';
+            logo.src = '../images/SOLARE/logo-black.png';
             iarba.classList.remove('open');
             house.classList.remove('open');
+            navigationSpan.forEach(nav => nav.classList.remove('white'));
+            navigationText.forEach(nav => nav.classList.remove('white'));
 
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
         }
 
         if (destination.index == 1) {
-            circleLeft.style.left = '-10vw';
-            circleLeft.style.bottom = '-25vh';
-
-            circleRight.style.right = '-10vw';
-            circleRight.style.top = '10vh';
-
             adLines.forEach(line => {
               line.classList.add('active');
             });
@@ -83,6 +87,9 @@ const page = new fullpage('#fullpage', {
         }
 	}
 });
+
+const navigationSpan = document.querySelectorAll('#fp-nav ul li a span');
+const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-left');
 
 // -------- Smooth -------- //
 
@@ -112,13 +119,13 @@ function scrollMobile() {
         circleLeft.style.left = '-150px';
         circleRight.style.right = '-150px';
         header.classList.add('mobile');
-        logo.src = '../images/logo.png';
+        logo.src = '../images/SOLARE/logo-alb.png';
     }
     else {
         circleLeft.style.left = '-350px';
         circleRight.style.right = '-350px';
         header.classList.remove('mobile');
-        logo.src = '../images/logo-black.png';
+        logo.src = '../images/SOLARE/logo-black.png';
     }
 } 
 
@@ -242,7 +249,7 @@ function openMenu() {
 
   if (menu.classList.contains('active')) {
     fullpage_api.setAllowScrolling(false);
-    logo.src = '../images/logo.png';
+    logo.src = '../images/SOLARE/logo-alb.png';
     header.classList.toggle('menu');
       setTimeout(() => {
           anime({
@@ -257,7 +264,7 @@ function openMenu() {
       fullpage_api.setAllowScrolling(true);
       closeSection();
 
-      if (!header.classList.contains('mobile')) logo.src = '../images/logo-black.png';
+      if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/SOLARE/logo-black.png';
       setTimeout(() => { header.classList.toggle('menu'); }, 500)
 
       anime({

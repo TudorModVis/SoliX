@@ -140,7 +140,7 @@ cards.forEach(card => {
 });
 
 const socialMenues = document.querySelectorAll('.social-menu');
-let firstSocial, lastSocial;
+let firstSocial;
 
 function openSocialMenu(event) {
     const target = event.currentTarget;
@@ -152,18 +152,17 @@ function openSocialMenu(event) {
     anime({
         targets: links,
         top: function(el, i) {
-            return -80 * i;
+            return -90 * i;
         },
         easing: 'easeOutQuad',
-        duration: 300,
-        delay: anime.stagger(50),
+        duration: 250,
+        delay: anime.stagger(150),
     });
 }
 
 function closeSocialMenu(event) {
     const target = event.currentTarget;
     const links = target.parentNode.querySelectorAll('div');
-
     firstSocial.classList.remove('active');
 
     anime({

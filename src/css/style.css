@@ -100,7 +100,7 @@ header .menu-btn {
 header .menu-btn .line {
     padding: 0;
     width: 30px;
-    background: #fff;
+    background: #212121;
     height: 2px;
     margin: 5px 0;
 
@@ -116,6 +116,7 @@ header .menu-btn .line.line--1 {
 header .menu-btn .line.line--1.line-cross {
     width: 30px;
     transform: rotate(45deg) translateY(10px);
+    background-color: #f1f1f1;
 }
 
 header .menu-btn .line.line--2 {
@@ -127,6 +128,7 @@ header .menu-btn .line.line--2.line-fade-out {
     width: 28px;
     transform: translate(-30px);
     opacity: 0;
+    background-color: #f1f1f1;
 }
 
 header .menu-btn .line.line--3 {
@@ -137,6 +139,7 @@ header .menu-btn .line.line--3 {
 header .menu-btn .line.line--3.line-cross {
     width: 30px;
     transform: rotate(-45deg) translateY(-10px);
+    background-color: #f1f1f1;
 }
 
 header {
@@ -150,6 +153,18 @@ header.mobile {
     top: 0;
 }
 
+header.mobile .menu-btn .line {
+    background-color: #f1f1f1;
+}
+
+header a {
+    transition: .2s;
+}
+
+header a:hover {
+    font-weight: bold;
+}
+
 .header {
     min-height: 6.5vh;
     max-height: 60px;
@@ -158,6 +173,14 @@ header.mobile {
 
 header.alt .wrapper {
     background-color: #1E1E1E;
+}
+
+header.alt .menu-btn .line {
+    background-color: #f1f1f1;
+}
+
+header.alt .pages{
+    color: #f1f1f1;
 }
 
 header.menu .wrapper {
@@ -452,6 +475,10 @@ footer a:hover img {
     animation: none;
 }
 
+.social-menu .last {
+    animation: lastSocial 1.5s infinite;
+}
+
 .social-menu .first.active a img {
     display: block;
 }
@@ -465,7 +492,16 @@ footer a:hover img {
     50% {transform: scale(1.1);}
 }
 
+@keyframes lastSocial {
+    0%, 100% {transform: scale(.8)}
+    50% {transform: scale(.9);}
+}
+
 /* -------- Full Page Configuration -------- */
+
+#fp-nav {
+    z-index: 20;
+}
 
 #fp-nav.fp-left {
     left: 25px;
@@ -477,7 +513,7 @@ footer a:hover img {
 }
 
 #fp-nav ul li a span {
-    background: #F1F1F1;
+    background: #212121;
     border-radius: 0;
     width: 3px;
     height: 30px;
@@ -486,6 +522,10 @@ footer a:hover img {
     left: auto;
     margin: 0;
     opacity: .5;
+}
+
+#fp-nav ul li a span.white {
+    background: #f1f1f1;
 }
 
 #fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, #fp-nav ul li a:hover span, #fp-nav ul li:hover a span {
@@ -502,7 +542,11 @@ footer a:hover img {
     font-size: 1rem;
     font-weight: bold;
     left: 10px;
-    color: #F1F1F1;
+    color: #212121;
+}
+
+#fp-nav ul li .fp-tooltip.fp-left.white {
+    color: #f1f1f1;
 }
 
 .fp-watermark {

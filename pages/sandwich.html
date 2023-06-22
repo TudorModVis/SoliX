@@ -13,12 +13,12 @@
 
     <link rel="stylesheet" href="../src/css/libraries/fullpage.min.css">
     <link rel="stylesheet" href="../dist/output.css">
-    <link rel="stylesheet" href="../src/css/solare.css">
+    <link rel="stylesheet" href="../src/css/sandwich.css">
 
     <script src="../src/js/libraries/fullpage.min.js" defer></script>
     <script src="../src/js/libraries/anime.min.js" defer></script>
     <script src="../src/js/app.js" defer></script>
-    <script src="../src/js/solare.js" defer></script>
+    <script src="../src/js/sandwich.js" defer></script>
 
 </head>
 <body>
@@ -51,12 +51,12 @@
                 <div class="line line--3"></div>
             </div>
             
-            <a href="../index.html"><img src="../images/SOLARE/logo-black.png" alt="" class="h-[4.5vh] lg:h-[6.5vh] max-h-[60px] w-auto" id="logo"></a>
+            <a href="../index.html"><img src="../images/SANDWICH/logo-negru.png" alt="" class="h-[4.5vh] lg:h-[6.5vh] max-h-[60px] w-auto" id="logo"></a>
             <div class="pages 2lg:flex gap-[3vw] hidden text-[#212121]">
                 <a href="../index.html">Acasă</a>
-                <a href="fotovoltaice.html" class="font-bold">Panouri Solare</a>
+                <a href="fotovoltaice.html">Panouri Solare</a>
                 <a href="">Construcții Modulare</a>
-                <a href="sandwich.html">Panouri Sandwich</a>
+                <a href="" class="font-bold">Panouri Sandwich</a>
                 <a href="">Contacte</a>
             </div>
         </div>
@@ -70,8 +70,18 @@
                 </div>
             </div>
             <div>
+                <div class="link relative">
+                    <a href="" class="font-medium" href="">Panouri Solare</a>
+                </div>
+            </div>
+            <div>
+                <div class="link relative">
+                    <a class="font-medium 2xl:min-w-max" href="">Construcții Modulare</a>
+                </div>
+            </div>
+            <div>
                 <div class="link unfold relative">
-                    <span class="font-bold">Panouri Solare</span>
+                    <span class="font-bold">Panouri Sandwich</span>
                     <img src="../images/HOME/menu arrow.png" alt="" class="absolute h-full top-0 right-0 py-[7px]">
                 </div>
                 <div class="sections flex flex-col gap-[15px] h-0">
@@ -82,16 +92,6 @@
                     <a class="text-[1.6rem] opacity-0" onclick="fullpage_api.moveTo(5);">Proiecte</a>
                 </div>
             </div>
-            <div>
-                <div class="link relative">
-                    <a class="font-medium 2xl:min-w-max" href="">Construcții Modulare</a>
-                </div>
-            </div>
-            <div>
-                <div class="link relative">
-                    <a href="sandwich.html" class="font-medium" href="">Panouri Sandwich</a>
-                </div>
-            </div>
             <div class="link relative">
                 <a href="" class="font-medium">Contacte</a>
             </div>
@@ -100,15 +100,15 @@
 
     <div class="w-screen h-full overflow-hidden">
         <div id="fullpage">
-            <div class="section bg-[#1E605A]" id="home">
-                <img src="../images/SOLARE/cer.svg" alt="" class="absolute top-0 w-full max-h-[87%] object-cover hidden lg:block">
+            <div class="section" id="home">
+                <img src="../images/SANDWICH/HOME/cer.svg" alt="" class="absolute top-0 w-full max-h-[87%] object-cover hidden lg:block">
                 <img src="../images/SOLARE/cer-mob.png" alt="" class="absolute top-0 w-full h-full object-cover lg:hidden">
-                <img src="../images/SOLARE/casa.png" alt="" class="absolute right-0 bottom-[5%] lg:bottom-0 w-[120%] max-w-max lg:w-[78%] max-h-[85%] object-contain object-right-bottom" id="house">
-                <img src="../images/SOLARE/tufardubluverde.svg" alt="" class="absolute bottom-0 max-w-max max-h-[13%] lg:max-h-[19%]">
-                <img src="../images/SOLARE/tufar negru.svg" alt="" class="absolute bottom-0 max-w-max max-h-[9%] lg:max-h-[12%]" id="iarba">
+                <img src="../images/SANDWICH/HOME/iarba.svg" alt="" class="absolute bottom-0 left-0 object-left-bottom object-contain w-full max-h-[26%]">  
+                <img src="../images/SANDWICH/HOME/casa.png" alt="" class="absolute right-0 bottom-[5%] lg:bottom-0 w-[120%] max-w-max lg:w-[78%] max-h-[85%] object-contain object-right-bottom" id="house">
+                <img src="../images/SANDWICH/HOME/iarba.png" alt="" class="absolute bottom-0 max-w-max max-h-[9%] lg:max-h-[14%]" id="iarba">
                 <div class="w-[calc(100%-50px)] lg:w-1/3 2xl:w-[30%] absolute top-[28%] lg:top-1/2 lg:translate-y-[-50%] ml-[25px] lg:ml-[13vw] 2xl:ml-[10.4vw] z-10 text-[#212121]">
-                    <h1 class="mb-[25px] lg:mb-[2.3vh] leading-tight">Panouri solare</h1>
-                    <h3 class="text-[1.3rem] mb-[50px] lg:mb-[4.5vh] leading-tight font-medium">Energie curată și economii semnificative - fii independent energetic cu panouri solare instalate de echipa SoliX.</h3>
+                    <h1 class="mb-[25px] lg:mb-[2.3vh] leading-tight">Panouri sandwich - soluția ideală pentru proiecte durabile și economice</h1>
+                    <h3 class="text-[1.3rem] mb-[50px] lg:mb-[4.5vh] leading-tight font-medium hidden">Energie curată și economii semnificative - fii independent energetic cu panouri solare instalate de echipa SoliX.</h3>
                     <button class="bg-[#00ACBE] hover:bg-[#F1F1F1] hover:text-[#00ACBE] transition-all duration-300 py-[1.3vh] px-[15vw] lg:px-[3.7vw] rounded-[10px] font-medium" onclick="fullpage_api.moveSectionDown();">Află mai multe</button>
                 </div>
             </div>
@@ -116,24 +116,34 @@
             <div class="section" id="service">
                 <div class="header hidden lg:block"></div>
                 <div class="container mt-[50px] lg:mt-[4.5vh] relative">
-                    <h1 class="mb-[50px] lg:mb-[7vh] lg:w-auto text-left lg:text-center">Care sunt avatajele?</h1>
-                    <div class="flex flex-col-reverse lg:flex-row lg:justify-between">
-                        <img src="../images/SOLARE/panouri solare.png" alt="" class="h-[400px] lg:h-[60vh] mix-blend-exclusion mt-[50px] lg:mt-0">
-                        <div class="w-full lg:w-[45%] flex flex-col gap-[50px] lg:gap-[4.6vh] 2xl:pt-9">
-                            <div class="relative">
-                                <img src="../images/SOLARE/AVANTAJE/linia1.svg" alt="" class="adv-line absolute right-[103%] top-1/3 w-[18vw] hidden lg:block">
-                                <h2 class="mb-[15px]">Investiție profitabilă</h2>
-                                <p class="text-sm">Panourile solare sunt cea mai profitabilă investiție pentru țara noastră. În Moldova sunt 220 de zile însorite și acest indicator este stabil.</p>
+                    <h1 class="mb-[50px] lg:mb-[7vh] lg:w-auto text-left lg:text-center">Beneficii</h1>
+                    <div class="grid grid-cols-2 w-full">
+                        <div class="w-[80%]">
+                            <h3 class="text-3xl font-light">Izolare termică</h3>
+                            <div class="flex lg:mt-5 gap-[2vw] items-center">
+                                <h3 class="text-[10rem] leading-none font-light">1</h3>
+                                <p class="font-light text-justify text-sm">Panourile sandwich sunt cunoscute pentru capacitatea lor excelentă de izolare termică. Ele pot reduce transferul de căldură în ambele direcții, menținând astfel temperatura optimă în interiorul unei clădiri. Acest lucru contribuie la economisirea energiei și la reducerea costurilor de încălzire și răcire.</p>
                             </div>
-                            <div class="relative">
-                                <img src="../images/SOLARE/AVANTAJE/linia2.svg" alt="" class="adv-line --1 absolute right-[103%] top-1/3 w-[19.5vw] hidden lg:block">
-                                <h2 class="mb-[15px]">Rambursare rapidă</h2>
-                                <p class="text-sm">Fotovoltaicele se rambursează în 5-10 ani, iar după această perioadă vei beneficia, practic, de energie gratuită.</p>
+                        </div>
+                        <div class="w-[80%] justify-self-end">
+                            <h3 class="text-3xl font-light">Izolare termică</h3>
+                            <div class="flex lg:mt-5 gap-[2vw] items-center">
+                                <h3 class="text-[10rem] leading-none font-light">2</h3>
+                                <p class="font-light text-justify text-sm">Panourile sandwich sunt cunoscute pentru capacitatea lor excelentă de izolare termică. Ele pot reduce transferul de căldură în ambele direcții, menținând astfel temperatura optimă în interiorul unei clădiri. Acest lucru contribuie la economisirea energiei și la reducerea costurilor de încălzire și răcire.</p>
                             </div>
-                            <div class="relative 3xl:mt-[2.7vh]">
-                                <img src="../images/SOLARE/AVANTAJE/linia3.svg" alt="" class="adv-line --2 absolute right-[103%] top-1/3 w-[21vw] hidden lg:block">
-                                <h2 class="mb-[15px]">Întreținere minimă</h2>
-                                <p class="text-sm">Panourile solare sunt caracterizate de costuri de întreținere minime și de o mare mobilitate, fiind ușor de demontat și montat într-un alt loc.</p>
+                        </div>
+                        <div class="w-[80%]">
+                            <h3 class="text-3xl font-light">Izolare termică</h3>
+                            <div class="flex lg:mt-5 gap-[2vw] items-center">
+                                <h3 class="text-[10rem] leading-none font-light">1</h3>
+                                <p class="font-light text-justify text-sm">Panourile sandwich sunt cunoscute pentru capacitatea lor excelentă de izolare termică. Ele pot reduce transferul de căldură în ambele direcții, menținând astfel temperatura optimă în interiorul unei clădiri. Acest lucru contribuie la economisirea energiei și la reducerea costurilor de încălzire și răcire.</p>
+                            </div>
+                        </div>
+                        <div class="w-[80%] justify-self-end">
+                            <h3 class="text-3xl font-light">Izolare termică</h3>
+                            <div class="flex lg:mt-5 gap-[2vw] items-center">
+                                <h3 class="text-[10rem] leading-none font-light">2</h3>
+                                <p class="font-light text-justify text-sm">Panourile sandwich sunt cunoscute pentru capacitatea lor excelentă de izolare termică. Ele pot reduce transferul de căldură în ambele direcții, menținând astfel temperatura optimă în interiorul unei clădiri. Acest lucru contribuie la economisirea energiei și la reducerea costurilor de încălzire și răcire.</p>
                             </div>
                         </div>
                     </div>
@@ -142,90 +152,49 @@
     
             <div class="section fp-auto-height-responsive" id="colab">
                 <div class="header hidden lg:block"></div>
-                <div class="container mt-[75px] lg:mt-[4.5vh] flex flex-col">
-                    <h1 class="mb-[30px] lg:mb-[4.5vh] text-left lg:text-center">Cum te poate ajuta echipa SoliX?</h1>
-                    <p class="text-justify lg:text-center text-sm 2xl:text-base mb-[25px] lg:mb-[4.5vh]">Cu peste <span class="font-bold">20 de ani de experiență</span>, ne-am adaptat inovativ la noile tendințe ale industriei. În 2022, am introdus panourile fotovoltaice, oferind soluții avansate în Republica Moldova. Beneficiază de <span class="font-bold">calitate superioară</span> și <span class="font-bold">soluții personalizate</span> cu SoliX. Alege excelența pentru proiectele tale.</p>
-                    <div class="glass z-10 hidden lg:block">
-                        <div class="panel w-[71vw] px-[2.5vw] py-[4.5vh] relative overflow-hidden">
-                            <div class="circle-glass"></div>
-                            <div class="flex justify-between">
-                                <div class="w-[30%] 2xl:w-[25%]">
-                                    <img src="../images/SOLARE/proiectare.svg" alt="" class="h-[9vh] max-h-[72px]">
-                                    <h2 class="my-[2.3vh] whitespace-nowrap">Proiectare și Instalare a <br> Sistemelor Solare</h2>
-                                    <p class="text-sm">Echipa noastră, instruită la Centrul de Eficiență Energetică, are Certificat European de Expertiză și garantează soluții eficiente pentru clienții rezidențiali și comerciali.</p>
-                                </div>
-                                <div class="w-[30%] 2xl:w-[25%]">
-                                    <img src="../images/SOLARE/casa.svg" alt="" class="h-[9vh] max-h-[72px]">
-                                    <h2 class="my-[2.3vh] whitespace-nowrap">Consultanță și <br> Evaluare Energetică</h2>
-                                    <p class="text-sm">Echipa analizează consumul de energie al clienților și identifică soluții eficiente, reducând dependența de sursele tradiționale de energie și economisind costuri pe termen lung.</p>
-                                </div>
-                                <div class="w-[30%] 2xl:w-[25%]">
-                                    <img src="../images/SOLARE/mentenanta.svg" alt="" class="h-[9vh] max-h-[72px]">
-                                    <h2 class="my-[2.3vh]">Mentenanță și <br> Asistență Tehnică</h2>
-                                    <p class="text-sm">Tehnicienii noștri calificați efectuează verificări periodice și curățări pentru a menține performanța optimă. Suntem disponibili pentru suport tehnic și sfaturi în orice moment.</p>
-                                </div>
-                            </div>
+                <div class="px-[25px] lg:px-[9vw] mx-auto mt-[75px] lg:mt-[4.5vh] flex flex-col w-full">
+                    <h1 class="mb-[30px] lg:mb-[4.5vh] text-left lg:text-center">Tipuri de Panouri Sandwich</h1>
+                    <div class="flex w-full">
+                        <div class="w-[30%] text-left" id="tipuri">
+                            <h3 class="font-extrabold text-[2rem] pl-[5.5vw] mb-[3.2vh]">Tip Panou</h3>
+                            <button class="mb-[10px] block py-2 pr-4 pl-[5.5vw] rounded-e-xl font-bold w-full text-left hover:bg-[#00ACBE] transition-all duration-300 active" id="prindere-ascunsa">Perete cu prindere ascunsă</button>
+                            <button class="mb-[10px] block py-2 pr-4 pl-[5.5vw] rounded-e-xl font-bold w-full text-left hover:bg-[#00ACBE] transition-all duration-300" id="prindere-vizibila">Perete cu prindere vizibilă</button>
+                            <button class="mb-[10px] block py-2 pr-4 pl-[5.5vw] rounded-e-xl font-bold w-full text-left hover:bg-[#00ACBE] transition-all duration-300" id="trei-cute">Acoperiș cu 3 cute</button>
+                            <button class="block py-2 pr-4 pl-[5.5vw] rounded-e-xl font-bold w-full text-left hover:bg-[#00ACBE] transition-all duration-300" id="cinci-cute">Acoperiș cu 5 cute</button>
                         </div>
-                    </div>
-
-                    <img src="../images/SOLARE/servicii panele.png" alt="" class="container absolute -bottom-[135px] lg:bottom-0 w-[220%] lg:w-auto h-auto max-w-max lg:max-w-full left-1/2 translate-x-[-50%] lg:hidden 2xl:block">
-
-                    <div class="flex-1 items-center flex lg:hidden overflow-hidden w-full">
-                        <div class="glass mobile flex">
-                            <div class="panel w-[calc(100vw-50px)] px-[20px] py-[4.5vh] relative overflow-hidden mr-[25px] first">
+                        <div class="w-[35%] flex justify-center items-center">
+                            <img src="../images/SANDWICH/TYPES/prindere ascunsa.png" alt="" class="w-[80%]" id="tip-img">
+                        </div>
+                        <div class="glass w-[35%]">
+                            <div class="panel w-full px-[3vw] py-[6vh] overflow-hidden">
                                 <div class="circle-glass"></div>
-                                <div class="flex flex-col">
-                                    <div class="w-full mb-[60px]">
-                                        <img src="../images/SOLARE/proiectare.svg" alt="" class="h-[75px]">
-                                        <h2 class="mb-[25px] mt-[10px]">Proiectare și Instalare a <br> Sistemelor Solare</h2>
-                                        <p class="text-sm">Echipa noastră, instruită la Centrul de Eficiență Energetică, are Certificat European de Expertiză și garantează soluții eficiente pentru clienții rezidențiali și comerciali.</p>
+                                <div class="flex justify-between mb-[4.5vh]">
+                                    <div>
+                                        <h3 class="font-bold mb-">Grosime min/max</h3>
+                                        <p id="grosime"> <span>40</span> - <span>100</span> mm</p>
                                     </div>
+                                    <img src="../images/SANDWICH/TYPES/grosime.svg" alt="" class="h-[4.5vh]">
                                 </div>
-                                
-                                <div class="flex items-center justify-center h-[40px] absolute left-1/2 translate-x-[-50%] bottom-[20px]">
-                                    <div class="arrow left"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mx-[10px] active"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px]"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px]"></div>
-                                    <div class="arrow right"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="panel w-[calc(100vw-50px)] px-[20px] py-[4.5vh] relative overflow-hidden mr-[25px]">
-                                <div class="circle-glass"></div>
-                                <div class="flex flex-col">
-                                    <div class="w-full mb-[60px]">
-                                        <img src="../images/SOLARE/casa.svg" alt="" class="h-[75px]">
-                                        <h2 class="mb-[25px] mt-[10px]">Consultanță și <br> Evaluare Energetică</h2>
-                                        <p class="text-sm">Echipa analizează consumul de energie al clienților și identifică soluții eficiente, reducând dependența de sursele tradiționale de energie și economisind costuri pe termen lung.</p>
+                                <div class="flex justify-between mb-[4.5vh]">
+                                    <div>
+                                        <h3 class="font-bold">Grosime tablă interior/exterior min/max</h3>
+                                        <p id="grosime-tabla"> <span>0.4</span> - <span>0.6</span> mm</p>
                                     </div>
+                                    <img src="../images/SANDWICH/TYPES/grosime interior.svg" alt="" class="h-[4.5vh]">
                                 </div>
-                                
-                                <div class="flex items-center justify-center h-[40px] absolute left-1/2 translate-x-[-50%] bottom-[20px]">
-                                    <div class="arrow left"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mx-[10px]"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px] active"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px]"></div>
-                                    <div class="arrow right"></div>
-                                </div>
-                            </div>
-
-                            <div class="panel w-[calc(100vw-50px)] px-[20px] py-[4.5vh] relative overflow-hidden mr-[25px]">
-                                <div class="circle-glass"></div>
-                                <div class="flex flex-col">
-                                    <div class="w-full mb-[60px]">
-                                        <img src="../images/SOLARE/mentenanta.svg" alt="" class="h-[75px]">
-                                        <h2 class="mb-[25px] mt-[10px]">Mentenanță și <br> Asistență Tehnică</h2>
-                                        <p class="text-sm">Tehnicienii noștri calificați efectuează verificări periodice și curățări pentru a menține performanța optimă. Suntem disponibili pentru suport tehnic și sfaturi în orice moment.</p>
+                                <div class="flex justify-between mb-[4.5vh]">
+                                    <div>
+                                        <h3 class="font-bold">Greutate min/max</h3>
+                                        <p id="greutate"><span>8.95</span> - <span>14.93</span> kg/m</p>
                                     </div>
+                                    <img src="../images/SANDWICH/TYPES/greutate.svg" alt="" class="h-[4.5vh]">
                                 </div>
-                                
-                                <div class="flex items-center justify-center h-[40px] absolute left-1/2 translate-x-[-50%] bottom-[20px]">
-                                    <div class="arrow left"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mx-[10px]"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px]"></div>
-                                    <div class="circle border-[0.5px] border-[#F1F1F1] aspect-square h-[15px] rounded-full cursor-pointer mr-[10px] active"></div>
-                                    <div class="arrow right"></div>
+                                <div class="flex justify-between">
+                                    <div>
+                                        <h3 class="font-bold">Coeficient de transfer termic min/max</h3>
+                                        <p id="transfer"><span>0.48</span> - <span>0.20</span></p>
+                                    </div>
+                                    <img src="../images/SANDWICH/TYPES/transfer.svg" alt="" class="h-[4.5vh]">
                                 </div>
                             </div>
                         </div>
@@ -237,7 +206,7 @@
                 <div class="header hidden lg:block"></div>
                 <div class="px-[25px] flex-1 mx-auto lg:px-[9vw] mt-[190px] lg:mt-[4.5vh] flex flex-col w-full">
                     <h1 class="lg:mb-[4.5vh] text-left lg:text-center">Care este procesul?</h1>
-                    <div class="flex flex-col lg:flex-row items-center w-full justify-center">
+                    <div class="flex flex-col lg:flex-row items-center w-full">
                         <img src="../images/SOLARE/proces panele.png" alt="" class="h-[60vh] hidden lg:block">
                         <img src="../images/SOLARE/proces panele mobil.png" alt="" class="lg:hidden mb-[75px]">
                         <div class="steps flex flex-col justify-between h-full">

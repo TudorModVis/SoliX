@@ -1,6 +1,6 @@
 /* -------- Home Shadow -------- */
 
-#home .fp-overflow::after{
+/* #home .fp-overflow::after{
     position: absolute;
     content: '';
     top: 0px;
@@ -17,7 +17,7 @@
         width: 40%;
         background: linear-gradient(90deg, rgba(30, 30, 30, 0.5) 0%, rgba(47, 104, 97, 0) 100%);
     }
-}
+} */
 
 
 /* -------- Colaboration -------- */
@@ -47,7 +47,7 @@
 }
 
 .service:hover .shape {
-    transform: scale(9);
+    transform: scale(10);
 }
 
 .service .arrow {

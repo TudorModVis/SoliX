@@ -35,32 +35,8 @@ header a{
     transition: 0.5s;
 }
 
-header.alt .pages{
-    color: #f1f1f1;
-}
-
-header.mobile .menu-btn .line {
-    background-color: #f1f1f1;
-}
-
 #colab .mobile {
     transition: .7s;
-}
-
-header .menu-btn .line {
-    background: #212121;
-}
-
-header .menu-btn .line.line--1.line-cross {
-    background-color: #f1f1f1;
-}
-
-header .menu-btn .line.line--3.line-cross {
-    background-color: #f1f1f1;
-}
-
-header .menu-btn .line.line--2.line-fade-out {
-    background-color: #f1f1f1;
 }
 
 .adv-line.active {

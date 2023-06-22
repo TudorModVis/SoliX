@@ -5,6 +5,7 @@ const iarba = document.querySelector('#iarba');
 const house = document.querySelector('#house');
 const circleLeft = document.querySelector('#circle-left');
 const circleRight = document.querySelector('#circle-right');
+const logo = document.getElementById('logo');
 
 const socialMenu = document.querySelector('.social-menu');
 
@@ -45,6 +46,15 @@ const page = new fullpage('#fullpage', {
             header.classList.add('alt');
             iarba.classList.add('open');
             house.classList.add('open');
+            logo.src = '../images/logo.png';
+            navigationSpan.forEach(nav => nav.classList.add('white'));
+            navigationText.forEach(nav => nav.classList.add('white'));
+
+            circleLeft.style.left = '-10vw';
+            circleLeft.style.bottom = '-25vh';
+
+            circleRight.style.right = '-10vw';
+            circleRight.style.top = '10vh';
         }
 
         if (destination.index == 0) {
@@ -54,14 +64,9 @@ const page = new fullpage('#fullpage', {
 
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
-        }
-
-        if (destination.index == 1) {
-            circleLeft.style.left = '-10vw';
-            circleLeft.style.bottom = '-25vh';
-
-            circleRight.style.right = '-10vw';
-            circleRight.style.top = '10vh';
+            logo.src = '../images/logo-negru.png';
+            navigationSpan.forEach(nav => nav.classList.remove('white'));
+            navigationText.forEach(nav => nav.classList.remove('white'));
         }
 
         if (destination.index == 3) {
@@ -92,6 +97,9 @@ const page = new fullpage('#fullpage', {
         }
 	}
 });
+
+const navigationSpan = document.querySelectorAll('#fp-nav ul li a span');
+const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-left');
 
 // -------- Sponsor Carousell -------- //
 
@@ -316,6 +324,7 @@ function openMenu() {
 
     if (menu.classList.contains('active')) {
         fullpage_api.setAllowScrolling(false);
+        logo.src = '../images/logo.png';
         header.classList.toggle('menu');
         setTimeout(() => {
             anime({
@@ -329,6 +338,8 @@ function openMenu() {
     } else {
         fullpage_api.setAllowScrolling(true);
         closeSection();
+
+        if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/logo-negru.png';
         setTimeout(() => { header.classList.toggle('menu'); }, 500)
         
         anime({
@@ -390,11 +401,13 @@ function scrollMobile() {
         circleLeft.style.left = '-150px';
         circleRight.style.right = '-150px';
         header.classList.add('mobile');
+        logo.src = '../images/logo.png';
     }
     else {
         circleLeft.style.left = '-350px';
         circleRight.style.right = '-350px';
         header.classList.remove('mobile');
+        logo.src = '../images/logo-negru.png';
     }
 } 
 
