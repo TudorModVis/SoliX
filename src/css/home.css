@@ -1,12 +1,12 @@
 /* -------- Home Shadow -------- */
 
-/* #home .fp-overflow::after{
+#home .fp-overflow::after{
     position: absolute;
     content: '';
     top: 0px;
     height: 60%;
     width: 100%;
-    background: linear-gradient(rgba(30, 30, 30, 0.5) 0%, rgba(47, 104, 97, 0) 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(47, 104, 97, 0) 100%);
 }
 
 @media (min-width: 1024px) {
@@ -15,9 +15,9 @@
         left: 0;
         height: 100%;
         width: 40%;
-        background: linear-gradient(90deg, rgba(30, 30, 30, 0.5) 0%, rgba(47, 104, 97, 0) 100%);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(47, 104, 97, 0) 100%);
     }
-} */
+}
 
 
 /* -------- Colaboration -------- */

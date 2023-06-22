@@ -1578,6 +1578,18 @@ video {
   opacity: 0.2;
 }
 
+.opacity-75{
+  opacity: 0.75;
+}
+
+.opacity-50{
+  opacity: 0.5;
+}
+
+.opacity-60{
+  opacity: 0.6;
+}
+
 .mix-blend-difference{
   mix-blend-mode: difference;
 }
@@ -1770,7 +1782,7 @@ header a {
 }
 
 header a:hover {
-  font-weight: bold;
+  opacity: 1;
 }
 
 .header {

@@ -162,7 +162,7 @@ header a {
 }
 
 header a:hover {
-    font-weight: bold;
+    opacity: 1;
 }
 
 .header {
