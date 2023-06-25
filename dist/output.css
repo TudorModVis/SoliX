@@ -774,6 +774,10 @@ video {
   z-index: 40;
 }
 
+.z-\[2\]{
+  z-index: 2;
+}
+
 .mx-\[10px\]{
   margin-left: 10px;
   margin-right: 10px;

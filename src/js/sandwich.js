@@ -298,7 +298,7 @@ panelCircles.forEach (circle => {
 function enterImage(target, x) {
     anime({
         targets: target,
-        opacity: [0, .5],
+        opacity: [0, 1],
         translateX: [x, 0],
         delay: anime.stagger(100, {direction: 'reverse'}),
         easing: 'easeOutQuad',
@@ -309,7 +309,7 @@ function enterImage(target, x) {
 function exitImage(target, x) {
     anime({
         targets: target,
-        opacity: [.5, 0],
+        opacity: [1, 0],
         translateX: [0, x],
         delay: anime.stagger(100, {direction: 'reverse'}),
         easing: 'easeOutQuad',
