@@ -68,6 +68,10 @@ const page = new fullpage('#fullpage', {
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
         }
+
+        if (destination.index == 2) {
+            deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
+        }
 	}
 });
 
@@ -213,12 +217,12 @@ function countNumbers(target, num, round) {
     })
 }
 
-let last = prindereAscunsa;
+let last = prindereVizibila;
 
 prindereAscunsa.addEventListener('click', () => {
     if (last == prindereAscunsa) return;
     prindereAscunsa.classList.add('active');
-    deschidePrindereAscunsa(25, 150, 0.4, 0.6, 9.31, 14.93, 0.48, 0.2, '../images/SANDWICH/TYPES/prindere ascunsa.png');
+    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 8.00, 14.93, 0.48, 0.2, '../images/SANDWICH/TYPES/prindere ascunsa.png');
     last.classList.remove('active');
     last = prindereAscunsa;
 });
@@ -226,7 +230,7 @@ prindereAscunsa.addEventListener('click', () => {
 prindereVizibila.addEventListener('click', () => {
     if (last == prindereVizibila) return;
     prindereVizibila.classList.add('active');
-    deschidePrindereAscunsa(40, 100, 0.4, 0.6, 8.95, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
+    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
     last.classList.remove('active');
     last = prindereVizibila;
 });
@@ -234,7 +238,7 @@ prindereVizibila.addEventListener('click', () => {
 treiCute.addEventListener('click', () => {
     if (last == treiCute) return;
     treiCute.classList.add('active');
-    deschidePrindereAscunsa(30, 100, 0.5, 0.6, 9.83, 11.49, 0.59, 0.2, '../images/SANDWICH/TYPES/trei cute.png');
+    deschidePrindereAscunsa(30, 150, 0.4, 0.7, 9.83, 11.49, 0.59, 0.2, '../images/SANDWICH/TYPES/trei cute.png');
     last.classList.remove('active');
     last = treiCute;
 });
@@ -242,7 +246,73 @@ treiCute.addEventListener('click', () => {
 cinciCute.addEventListener('click', () => {
     if (last == cinciCute) return;
     cinciCute.classList.add('active');
-    deschidePrindereAscunsa(20, 120, 0.4, 0.6, 9.85, 15.46, 0.73, 0.16, '../images/SANDWICH/TYPES/cinci cute.png');
+    deschidePrindereAscunsa(30, 150, 0.4, 0.7, 9.85, 15.46, 0.73, 0.16, '../images/SANDWICH/TYPES/cinci cute.png');
     last.classList.remove('active');
     last = cinciCute;
 });
+
+
+// -------- Panel Carousell -------- //
+
+const panelContainer = document.querySelector('#colab .carousell');
+const panelImages = document.querySelectorAll('#colab .image');
+let panelCircles = document.querySelectorAll('#colab .circle');
+
+let panelIndex = 0, lastCircle = panelCircles[0], lastCircleIndex = 0;
+
+function cirlceMove(event) {
+    event.currentTarget.classList.add('active');
+    if (lastCircle != event.currentTarget) {
+        lastCircle.classList.remove('active');
+        lastCircle = event.currentTarget; 
+    }
+    let tempContainer = panelContainer;
+
+    let widthPanel = tempContainer.querySelector('.first');
+
+    var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+    const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+
+    for (let i = 0; i < panelCircles.length; i++) {
+        if (panelCircles[i].isEqualNode(event.currentTarget)) {
+            panelIndex = i;
+
+            tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+            if (lastCircleIndex < panelIndex) {
+                enterImage(panelImages[i].querySelectorAll('img'), 250);
+                exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), -250);
+            } else {
+                enterImage(panelImages[i].querySelectorAll('img'), -250);
+                exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), 250);
+            }
+            lastCircleIndex = panelIndex;
+            return;
+        }
+    }
+}
+
+panelCircles.forEach (circle => {
+    circle.addEventListener('click', cirlceMove);
+});
+
+function enterImage(target, x) {
+    anime({
+        targets: target,
+        opacity: [0, .5],
+        translateX: [x, 0],
+        delay: anime.stagger(100, {direction: 'reverse'}),
+        easing: 'easeOutQuad',
+        duration: 700,
+    })
+}
+
+function exitImage(target, x) {
+    anime({
+        targets: target,
+        opacity: [.5, 0],
+        translateX: [0, x],
+        delay: anime.stagger(100, {direction: 'reverse'}),
+        easing: 'easeOutQuad',
+        duration: 700
+    })
+}

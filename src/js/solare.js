@@ -13,7 +13,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'AVANTAJE', 'SERVICII', 'PROCESUL', 'PROIECTE'],
+    navigationTooltips: ['ACASĂ', 'SERVICII', 'AVANTAJE', 'PROCESUL', 'PROIECTE'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
@@ -71,12 +71,16 @@ const page = new fullpage('#fullpage', {
         }
 
         if (destination.index == 1) {
+          showWorkers();
+        }
+
+        if (destination.index == 2) {
             adLines.forEach(line => {
               line.classList.add('active');
             });
         }
 
-        if (origin.index == 1) {
+        if (origin.index == 2) {
           adLines.forEach(line => {
             line.classList.remove('active');
           });
@@ -106,7 +110,18 @@ function showSteps() {
   });
 }
 
+const serviceWorkers = document.querySelectorAll('#colab .image');
 
+function showWorkers() {
+  anime({
+    targets: serviceWorkers,
+    opacity: [0, .5],
+    translateY: [100, 0],
+    easing: 'easeOutSine',
+    delay: anime.stagger(300),
+    duration: 700
+  })
+}
 
 // -------- Scroll Mobile -------- //
 

@@ -72,7 +72,7 @@ const page = new fullpage('#fullpage', {
         if (destination.index == 3) {
             anime({
                 targets: '#surface',
-                innerHTML: [8000, 16000],
+                innerHTML: [8000, 500000],
                 round: 1,
                 duration: 2000,
                 easing: 'easeOutCubic'
