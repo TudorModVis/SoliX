@@ -125,7 +125,7 @@ function showWorkers() {
 
 // -------- Scroll Mobile -------- //
 
-const serviceSection = document.querySelector('#service');
+const serviceSection = document.querySelector('#colab');
 
 function scrollMobile() {
     if (window.innerWidth > 1023) return;

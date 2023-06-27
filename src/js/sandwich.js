@@ -39,6 +39,10 @@ const page = new fullpage('#fullpage', {
             duration: 300,
         });
     }
+    
+    if (destination.index == 2) {
+        deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
+    }
 
         if (window.innerWidth <= 1024) return;
 
@@ -68,10 +72,6 @@ const page = new fullpage('#fullpage', {
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
         }
-
-        if (destination.index == 2) {
-            deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
-        }
 	}
 });
 
@@ -80,7 +80,7 @@ const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-l
 
 // -------- Scroll Mobile -------- //
 
-const serviceSection = document.querySelector('#service');
+const serviceSection = document.querySelector('#colab');
 
 function scrollMobile() {
     if (window.innerWidth > 1023) return;
@@ -100,7 +100,6 @@ function scrollMobile() {
 } 
 
 window.addEventListener('scroll', scrollMobile);
-
 
 // -------- Menu -------- //
 
@@ -255,10 +254,100 @@ cinciCute.addEventListener('click', () => {
 // -------- Panel Carousell -------- //
 
 const panelContainer = document.querySelector('#colab .carousell');
+const mobilePanelContainer = document.querySelector('#colab .mobile');
 const panelImages = document.querySelectorAll('#colab .image');
+let panelNavCircles = document.querySelectorAll('.nav-circle');    
+
 let panelCircles = document.querySelectorAll('#colab .circle');
 
 let panelIndex = 0, lastCircle = panelCircles[0], lastCircleIndex = 0;
+
+function moveRight() {
+    let tempContainer;
+    if (window.innerWidth <= 1024) {
+        tempContainer = mobilePanelContainer;
+    } else {
+        tempContainer = panelContainer;
+    }
+
+    let widthPanel = tempContainer.querySelector('.first');
+    let panels = tempContainer.querySelectorAll('.panel');
+
+    var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+    const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+    panelIndex++;
+
+    if (panelIndex >= panels.length) {
+        panelIndex--;
+        return;
+    }
+    panelCircles[panelIndex].classList.add('active');
+    if (lastCircle != panelCircles[panelIndex]) {
+        lastCircle.classList.remove('active');
+        lastCircle = panelCircles[panelIndex]; 
+    }
+
+    tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+
+    if (lastCircleIndex < panelIndex) {
+        enterImage(panelImages[panelIndex].querySelectorAll('img'), 250);
+        exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), -250);
+    } else {
+        enterImage(panelImages[panelIndex].querySelectorAll('img'), -250);
+        exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), 250);
+    }
+
+    lastCircleIndex = panelIndex;
+}
+
+function moveLeft() {
+    let tempContainer;
+    if (window.innerWidth <= 1024) {
+        tempContainer = mobilePanelContainer;
+    } else {
+        tempContainer = panelContainer;
+    }
+
+    let widthPanel = tempContainer.querySelector('.first');
+
+    var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+    const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+    panelIndex--;
+
+    if (panelIndex < 0) {
+        panelIndex = 0;
+        return;
+    }
+
+    panelCircles[panelIndex].classList.add('active');
+    if (lastCircle != panelCircles[panelIndex]) {
+        lastCircle.classList.remove('active');
+        lastCircle = panelCircles[panelIndex]; 
+    }
+
+    tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+
+    if (lastCircleIndex < panelIndex) {
+        enterImage(panelImages[panelIndex].querySelectorAll('img'), 250);
+        exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), -250);
+    } else {
+        enterImage(panelImages[panelIndex].querySelectorAll('img'), -250);
+        exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), 250);
+    }
+
+    lastCircleIndex = panelIndex;
+}
+
+const leftArrows = document.querySelectorAll('#colab .arrow.left');
+const rightArrows = document.querySelectorAll('#colab .arrow.right');
+
+leftArrows.forEach(arrow => {
+    arrow.addEventListener('click', moveLeft);
+});
+
+rightArrows.forEach(arrow => {
+    arrow.addEventListener('click', moveRight);
+})
 
 function cirlceMove(event) {
     event.currentTarget.classList.add('active');
@@ -266,7 +355,13 @@ function cirlceMove(event) {
         lastCircle.classList.remove('active');
         lastCircle = event.currentTarget; 
     }
-    let tempContainer = panelContainer;
+
+    let tempContainer;
+    if (window.innerWidth <= 1024) {
+        tempContainer = mobilePanelContainer;
+    } else {
+        tempContainer = panelContainer;
+    }
 
     let widthPanel = tempContainer.querySelector('.first');
 
@@ -291,8 +386,80 @@ function cirlceMove(event) {
     }
 }
 
+function cirlceNavMove(event) {
+    let tempContainer;
+    if (window.innerWidth <= 1024) {
+        tempContainer = mobilePanelContainer;
+    } else {
+        tempContainer = panelContainer;
+    }
+
+    let panels = tempContainer.querySelectorAll('.panel');
+    panelNavCircles = panels[panelIndex].querySelectorAll('.nav-circle');
+    let widthPanel = tempContainer.querySelector('.first');
+
+    var style = widthPanel.currentStyle || window.getComputedStyle(widthPanel);
+    const width = widthPanel.clientWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + parseFloat(style.borderLeft) + parseFloat(style.borderRight);
+    for (let i = 0; i < panelNavCircles.length; i++) {
+        if (panelNavCircles[i].isEqualNode(event.target)) {
+            panelIndex = i;
+            tempContainer.style.transform = 'translateX(' + panelIndex * -width + 'px)';
+
+            panelCircles[panelIndex].classList.add('active');
+            if (lastCircle != panelCircles[panelIndex]) {
+                lastCircle.classList.remove('active');
+                lastCircle = panelCircles[panelIndex]; 
+            }
+
+            if (lastCircleIndex < panelIndex) {
+                enterImage(panelImages[panelIndex].querySelectorAll('img'), 250);
+                exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), -250);
+            } else {
+                enterImage(panelImages[panelIndex].querySelectorAll('img'), -250);
+                exitImage(panelImages[lastCircleIndex].querySelectorAll('img'), 250);
+            }
+            lastCircleIndex = panelIndex;
+            return;
+        }
+    }
+}
+
 panelCircles.forEach (circle => {
     circle.addEventListener('click', cirlceMove);
+});
+
+panelNavCircles.forEach (circle => {
+    circle.addEventListener('click', cirlceNavMove);
+});
+
+let panelStartX = 0, panelDist = 0;
+
+function touchStart(e) {
+    let touchobj = e.changedTouches[0];
+    panelStartX = parseInt(touchobj.clientX);
+}
+
+function touchMove(e) {
+    let touchobj = e.changedTouches[0];
+    panelDist = parseInt(touchobj.clientX) - panelStartX;
+
+}
+
+function touchEnd() {
+    if (panelDist > 50) {
+        moveLeft();
+     } else if (panelDist < -50) {
+        moveRight();
+     }
+     panelDist = 0;
+}
+
+const mobilePanels = mobilePanelContainer.querySelectorAll('.panel');
+
+mobilePanels.forEach (panel => {
+    panel.addEventListener('touchstart', touchStart);
+    panel.addEventListener('touchmove', touchMove);
+    panel.addEventListener('touchend', touchEnd);
 });
 
 function enterImage(target, x) {
@@ -303,7 +470,7 @@ function enterImage(target, x) {
         delay: anime.stagger(100, {direction: 'reverse'}),
         easing: 'easeOutQuad',
         duration: 700,
-    })
+    });
 }
 
 function exitImage(target, x) {
@@ -314,5 +481,5 @@ function exitImage(target, x) {
         delay: anime.stagger(100, {direction: 'reverse'}),
         easing: 'easeOutQuad',
         duration: 700
-    })
+    });
 }

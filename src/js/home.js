@@ -69,13 +69,20 @@ const page = new fullpage('#fullpage', {
             navigationText.forEach(nav => nav.classList.remove('white'));
         }
 
+        if (destination.index == 1) {
+            showService();
+        }
+
         if (destination.index == 3) {
             anime({
                 targets: '#surface',
                 innerHTML: [8000, 500000],
                 round: 1,
                 duration: 2000,
-                easing: 'easeOutCubic'
+                easing: 'easeOutCubic',
+                complete: function(anim) {
+                    document.querySelector('#surface').innerHTML = '500 000';
+                }
             });
             anime({
                 targets: '#projects',
@@ -100,6 +107,21 @@ const page = new fullpage('#fullpage', {
 
 const navigationSpan = document.querySelectorAll('#fp-nav ul li a span');
 const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-left');
+
+// -------- Sponsor Carousell -------- //
+
+const services = document.querySelectorAll('#service .service');
+
+function showService() {
+    anime({
+        targets: services,
+        opacity: [0, 1],
+        translateY: [70, 0],
+        delay: anime.stagger(200, {start: 250}),
+        easing: 'easeOutSine',
+        duration: 700
+    });
+}
 
 // -------- Sponsor Carousell -------- //
 

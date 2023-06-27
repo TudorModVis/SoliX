@@ -45,8 +45,14 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -303,7 +309,7 @@ footer nav a:hover {
 
 #colab .glass .panel{
     background: rgba(60, 60, 60, 0.5);
-    border: 0.5px solid rgba(241, 241, 241, 0.5);
+    border: 0.25px solid rgba(241, 241, 241, 0.25);
     backdrop-filter: blur(10px);
 
     border-radius: 25px;

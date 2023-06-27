@@ -6,7 +6,14 @@
     transition: .7s;
 }
 
-#colab .circle.active, #colab .circle:hover {
+@media (min-width: 1024px) {
+    #colab .circle:hover {
+        background-color: #00ACBE;
+        transform: scale(1);
+    }
+}
+
+#colab .circle.active {
     background-color: #00ACBE;
     transform: scale(1);
 }
@@ -20,3 +27,12 @@
     border-radius: 15px;
     border: 0.255px solid rgba(241, 241, 241, 0.50);
 }
+
+#colab .nav-circle {
+    background-color: transparent;
+}
+
+#colab .nav-circle.active {
+    background-color: #00ACBE;
+}   
+
