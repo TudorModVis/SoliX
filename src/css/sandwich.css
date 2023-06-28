@@ -28,6 +28,10 @@
     border: 0.255px solid rgba(241, 241, 241, 0.50);
 }
 
+/* #colab .glass{
+    perspective: 1000px;
+} */
+
 #colab .nav-circle {
     background-color: transparent;
 }
@@ -35,4 +39,3 @@
 #colab .nav-circle.active {
     background-color: #00ACBE;
 }   
-

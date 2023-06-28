@@ -44,3 +44,31 @@ function openMenu() {
 }
 
 menuButton.addEventListener('click', openMenu);
+
+const sumbit = document.querySelector('#submit');
+
+function sendMessage(event) {
+    event.preventDefault();
+
+    let name = document.querySelector("#name").value;
+    let tel = document.querySelector("#tel").value;
+    let email = document.querySelector('#email').value;
+    let detalii = document.querySelector('#detalii').value;
+    let phoneNumber = 37369150744;
+
+    let url = "https://wa.me/" + phoneNumber + "?text="
+    + 'Bună! Mă numesc, ' + name + '. ' + 'Serviciile ce mă interessează sunt:';
+
+    servicesButtons.forEach(button => {
+        if (button.classList.contains('active')) url += ' ' + button.textContent;
+    })
+
+    url += '. Nr. meu de telefon: ' + tel + '. Email: ' 
+    + email + '. Detailiile proiectului meu: ' + detalii;
+
+    console.log(url);
+
+    window.open(url,'_blank').focus();
+}
+
+sumbit.addEventListener('click', sendMessage);
