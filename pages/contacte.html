@@ -22,6 +22,7 @@
 
 </head>
 <body>
+    <button type="button" data-cc="c-settings">Manage cookie settings</button>
     <div class="social-menu fixed right-[25px] lg:right-[50px] bottom-[50px] w-[70px] aspect-square z-10">
         <div class="last w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><img src="../images/SOCIAL MENU/x.png" alt="" class="w-[35px]"></div>
         <div class="w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><a href="viber://chat?number=+37369150744" target="_blank"><img src="../images/SOCIAL MENU/viber.png" alt="" class="w-[30px]"></a></div>
@@ -34,7 +35,7 @@
     </div>
     <div class="background bg-[#1E1E1E] fixed w-screen h-full">
         <div class="circle absolute w-[300px] lg:w-[30vw] aspect-square rounded-full bg-[#00ACBE] bottom-[-150px] lg:bottom-[-15vh] left-[-350px] lg:left-[-10vw] blur-lg opacity-20" id="circle-left"></div>
-        <div class="circle absolute w-[300px] lg:w-[24vw] aspect-square rounded-full bg-[#00ACBE] top-[15vh] lg:top-[10vh] right-[-350px] lg:right-[-10vw] blur-lg opacity-20" id="circle-right"></div>
+        <div class="circle absolute w-[300px] lg:w-[24vw] aspect-square rounded-full bg-[#00ACBE] top-[15vh] lg:top-[15vh] right-[-350px] lg:right-[-10vw] blur-lg opacity-20" id="circle-right"></div>
 
         <div class="particle absolute w-[10px] aspect-square rounded-full bg-[#00ACBE] left-[-10vw]"></div>
         <div class="particle absolute w-[10px] aspect-square rounded-full bg-[#00ACBE] left-[-10vw]"></div>
@@ -91,7 +92,7 @@
         </nav>
     </div>
 
-    <section id="colab" class="w-screen overflow-x-hidden">
+    <section id="colab">
         <div class="header hidden lg:block"></div>
         <div class="container mx-auto mt-[100px] lg:mt-[4.5vh] mb-[50px] lg:mb-[9vh] relative">
             <h1 class="mb-[25px] lg:mb-[4.5vh] lg:w-auto text-center lg:text-left">Ai un nou proiect în gând?</h1>
@@ -166,8 +167,9 @@
                 </div>
             </form>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5439.122765259344!2d28.833899!3d47.029214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d07b0fbbb93%3A0xd908b4558811bf87!2sMidanat%20Construct!5e0!3m2!1sen!2sus!4v1687878334071!5m2!1sen!2sus" class="w-full h-[250px] lg:h-[45vh]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <!-- <div id="map" class="w-full h-[250px] lg:h-[45vh]"></div> -->
+        <div class="w-full h-[250px] lg:h-[45vh] relative">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5439.122765259344!2d28.833899!3d47.029214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d07b0fbbb93%3A0xd908b4558811bf87!2sMidanat%20Construct!5e0!3m2!1sen!2sus!4v1687948652194!5m2!1sen!2sus" width="300" height="450" class="w-full h-full absolute left-0 top-0" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+        </div>
         <footer class="px-[25px] lg:px-[7.5vw] flex flex-col lg:flex-row justify-between bg-[#0E0E0E] py-[50px] lg:pt-[4.5vh] lg:pb-[15px] relative rounded-t-xl lg:rounded-none">
             <div>
                 <div class="flex flex-col lg:flex-row gap-[2.5vw] items-center">
@@ -206,7 +208,5 @@
             </div>
     </footer>
     </section>
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});</script>
 </body>
 </html>
