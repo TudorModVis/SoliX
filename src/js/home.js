@@ -346,7 +346,7 @@ function openMenu() {
 
     if (menu.classList.contains('active')) {
         fullpage_api.setAllowScrolling(false);
-        logo.src = '../images/logo.png';
+        logo.src = 'images/logo.png';
         header.classList.toggle('menu');
         setTimeout(() => {
             anime({
@@ -361,7 +361,7 @@ function openMenu() {
         fullpage_api.setAllowScrolling(true);
         closeSection();
 
-        if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/logo-negru.png';
+        if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = 'images/logo-negru.png';
         setTimeout(() => { header.classList.toggle('menu'); }, 500)
         
         anime({
