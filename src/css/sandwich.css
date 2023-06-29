@@ -28,14 +28,20 @@
     border: 0.255px solid rgba(241, 241, 241, 0.50);
 }
 
-/* #colab .glass{
-    perspective: 1000px;
-} */
-
 #colab .nav-circle {
     background-color: transparent;
 }
 
 #colab .nav-circle.active {
     background-color: #00ACBE;
-}   
+}
+
+@media (min-width: 1024px) {
+    .building:hover .shape {
+        transform: translateX(80px) scale(1.25);
+    }    
+}
+
+.building .shape {
+    transition: .3s;
+}

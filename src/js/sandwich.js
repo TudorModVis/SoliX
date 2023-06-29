@@ -40,8 +40,8 @@ const page = new fullpage('#fullpage', {
         });
     }
     
-    if (destination.index == 2) {
-        deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
+    if (destination.index == 3) {
+        deschidePrindereAscunsa(30, 200, 0.3, 0.7, 8.00, 14.93, 0.48, 0.2, '../images/SANDWICH/TYPES/prindere vizibila.png')
     }
 
         if (window.innerWidth <= 1024) return;
@@ -72,11 +72,30 @@ const page = new fullpage('#fullpage', {
             circleLeft.style.left = '-50vw';
             circleRight.style.right = '-50vw';
         }
+
+        if (destination.index == 2) {
+            showBuildings();
+        }
 	}
 });
 
 const navigationSpan = document.querySelectorAll('#fp-nav ul li a span');
 const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-left');
+
+// -------- Buildings -------- //
+
+const buildings = document.querySelectorAll('.building .number');
+
+function showBuildings() {
+    console.log(buildings);
+    anime({
+        targets: buildings,
+        translateY: [50, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(150, {start: 300}),
+        duration: 2000
+    })
+}
 
 // -------- Scroll Mobile -------- //
 
@@ -221,7 +240,7 @@ let last = prindereVizibila;
 prindereAscunsa.addEventListener('click', () => {
     if (last == prindereAscunsa) return;
     prindereAscunsa.classList.add('active');
-    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 8.00, 14.93, 0.48, 0.2, '../images/SANDWICH/TYPES/prindere ascunsa.png');
+    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere ascunsa.png');
     last.classList.remove('active');
     last = prindereAscunsa;
 });
@@ -229,7 +248,7 @@ prindereAscunsa.addEventListener('click', () => {
 prindereVizibila.addEventListener('click', () => {
     if (last == prindereVizibila) return;
     prindereVizibila.classList.add('active');
-    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 9.31, 15.79, 0.75, 0.13, '../images/SANDWICH/TYPES/prindere vizibila.png');
+    deschidePrindereAscunsa(30, 200, 0.3, 0.7, 8.00, 14.93, 0.48, 0.2, '../images/SANDWICH/TYPES/prindere vizibila.png');
     last.classList.remove('active');
     last = prindereVizibila;
 });

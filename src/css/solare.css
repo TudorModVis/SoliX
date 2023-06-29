@@ -55,8 +55,3 @@ header a{
     from {clip-path: inset(0px 100% 0px 0px);}
     to {clip-path: inset(0px 0 0 0px);}
 }
-
-@keyframes lineReverse {
-    from {clip-path: inset(0px 0 0px 0px);}
-    to {clip-path: inset(0px 100% 0 0px);}
-}
