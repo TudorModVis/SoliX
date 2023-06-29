@@ -3189,6 +3189,10 @@ body.fp-responsive::-webkit-scrollbar {
     padding-right: 2.6vw;
   }
 
+  .lg\:pl-\[2\.6vw\]{
+    padding-left: 2.6vw;
+  }
+
   .lg\:text-left{
     text-align: left;
   }
