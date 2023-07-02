@@ -263,7 +263,8 @@ function openMenu() {
   lineThree.classList.toggle('line-cross');
 
   if (menu.classList.contains('active')) {
-    fullpage_api.setAllowScrolling(false);
+    document.body.style.overflow = 'hidden';
+
     logo.src = '../images/SOLARE/logo-alb.png';
     header.classList.toggle('menu');
       setTimeout(() => {
@@ -276,7 +277,8 @@ function openMenu() {
           });
       }, 400);
   } else {
-      fullpage_api.setAllowScrolling(true);
+    document.body.style.overflow = 'auto';
+
       closeSection();
 
       if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/SOLARE/logo-black.png';

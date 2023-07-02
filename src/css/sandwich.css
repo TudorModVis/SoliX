@@ -30,6 +30,7 @@
 
 #colab .nav-circle {
     background-color: transparent;
+    transition: .3s;
 }
 
 #colab .nav-circle.active {
@@ -37,11 +38,36 @@
 }
 
 @media (min-width: 1024px) {
+    #colab .nav-circle:hover {
+        background-color: #00ACBE;
+    }
+}
+
+@media (min-width: 1024px) {
     .building:hover .shape {
-        transform: translateX(80px) scale(1.25);
+        transform: translateX(40px) scale(1.25);
     }    
 }
 
 .building .shape {
     transition: .3s;
+}
+
+@media (min-width: 1024px) {
+    #colab .arrow {
+        width: 15px;
+        height: 15px;
+        border-top: 3px solid #F1F1F1;
+        border-right: 3px solid #F1F1F1;
+    }
+    
+    #colab .arrow:hover {
+        border-color: #00ACBE;
+        box-shadow: 3px -3px 0 #F1F1F1;
+    }
+
+    #colab .circle:hover {
+        background-color: #00ACBE;
+        transition: all 200ms ease;
+    }
 }

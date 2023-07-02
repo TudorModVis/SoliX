@@ -1,0 +1,35 @@
+.building:hover .top {
+    transform: translateY(-10px);
+}    
+
+.building:hover .right {
+    transform: translateX(10px);
+}   
+
+.building:hover .left {
+    transform: translateX(-10px);
+}   
+
+.building .home {
+    transition: .3s;
+}
+
+.building button:hover img {
+    transform: translateX(7px);
+}
+
+#heading.active {
+    opacity: 0;
+}
+
+#heading {
+    transition: .3s;
+}
+
+#footer .fp-overflow {
+    height: auto !important;
+}
+
+#colab .glass .panel.mobile {
+    backdrop-filter: blur(20px);
+}

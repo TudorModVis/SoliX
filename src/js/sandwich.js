@@ -12,7 +12,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'AVANTAJE', 'SERVICII', 'PROCESUL', 'PROIECTE'],
+    navigationTooltips: ['ACASĂ', 'SERVICII', 'POSIBILITĂȚI', 'TIPURI', 'PROIECTE'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
@@ -87,7 +87,6 @@ const navigationText = document.querySelectorAll('#fp-nav ul li .fp-tooltip.fp-l
 const buildings = document.querySelectorAll('.building .number');
 
 function showBuildings() {
-    console.log(buildings);
     anime({
         targets: buildings,
         translateY: [50, 0],
@@ -130,7 +129,8 @@ function openMenu() {
     lineThree.classList.toggle('line-cross');
   
     if (menu.classList.contains('active')) {
-      fullpage_api.setAllowScrolling(false);
+        document.body.style.overflow = 'hidden';
+
       logo.src = '../images/SANDWICH/logo-alb.png';
       header.classList.toggle('menu');
         setTimeout(() => {
@@ -143,7 +143,8 @@ function openMenu() {
             });
         }, 400);
     } else {
-        fullpage_api.setAllowScrolling(true);
+        document.body.style.overflow = 'auto';
+
         closeSection();
   
         if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/SANDWICH/logo-negru.png';
@@ -480,6 +481,30 @@ mobilePanels.forEach (panel => {
     panel.addEventListener('touchmove', touchMove);
     panel.addEventListener('touchend', touchEnd);
 });
+
+let dragStartX = 0;
+
+function dragStart(event) {
+    dragStartX = parseInt(event.clientX);
+}
+
+function dragEnd(event) {
+    let distance = parseInt(event.clientX - dragStartX);
+
+    if (distance > 50) {
+        moveLeft();
+     } else if (distance < -50) {
+        moveRight();
+     }
+}
+
+const pcPanels = panelContainer.querySelectorAll('.panel');
+
+pcPanels.forEach(panel => {
+    panel.addEventListener('mousedown', dragStart);
+    panel.addEventListener('mouseup', dragEnd);
+})
+
 
 function enterImage(target, x) {
     anime({

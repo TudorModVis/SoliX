@@ -12,7 +12,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'SERVICII', 'COLABORARE', 'PROIECTE', 'SPONSORI'],
+    navigationTooltips: ['ACASĂ', 'SERVICII', 'COLABORARE', 'PROIECTE', 'CLIENȚI'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
@@ -345,7 +345,8 @@ function openMenu() {
     lineThree.classList.toggle('line-cross');
 
     if (menu.classList.contains('active')) {
-        fullpage_api.setAllowScrolling(false);
+        document.body.style.overflow = 'hidden';
+
         logo.src = 'images/logo.png';
         header.classList.toggle('menu');
         setTimeout(() => {
@@ -358,7 +359,8 @@ function openMenu() {
             });
         }, 400);
     } else {
-        fullpage_api.setAllowScrolling(true);
+        document.body.style.overflow = 'auto';
+
         closeSection();
 
         if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = 'images/logo-negru.png';

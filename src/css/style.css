@@ -189,6 +189,14 @@ header.alt .pages{
     color: #f1f1f1;
 }
 
+header #lang, header.alt #lang .inactive {
+    transition: .3s;
+}
+
+header.alt #lang, header.alt #lang .inactive {
+    color: #f1f1f1;
+}
+
 header.menu .wrapper {
     transition-delay: 0.2s;
     background-color: transparent;
@@ -580,6 +588,7 @@ footer nav a:hover {
         max-height: 100vh;
     }
 }
+
 
 body.fp-responsive::-webkit-scrollbar {
     display: none;
