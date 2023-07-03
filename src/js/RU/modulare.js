@@ -12,7 +12,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'TIPURI', 'CONTACTE'],
+    navigationTooltips: ['ГЛАВНАЯ', 'ТИПЫ', 'КОНТАКТЫ'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
@@ -193,25 +193,25 @@ function openDialog() {
 }
 
 standart.addEventListener('click', () => {
-    casaTitle.textContent = 'Casa Modulară Standart';
+    casaTitle.textContent = 'Модульный Дом Стандарт';
     openDialog();
     dateCasa(15, 2700, 6000, 2500 , '../images/MODULARE/TYPES/standart.webp');
 });
 
 dubla.addEventListener('click', () => {
-    casaTitle.textContent = 'Casa Modulară Dublă';
+    casaTitle.textContent = 'Модульный Дом Двойной';
     openDialog();
     dateCasa(30, 2700, 6000, 5000, '../images/MODULARE/TYPES/dubla.webp');
 });
 
 unghiulara.addEventListener('click', () => {
-    casaTitle.textContent = 'Casa Modulară Unghiulară';
+    casaTitle.textContent = 'Модульный Дом Угловой';
     openDialog();
     dateCasa(30, 2700, 6000, 8500, '../images/MODULARE/TYPES/unghiulara.webp');
 });
 
 extinsa.addEventListener('click', () => {
-    casaTitle.textContent = 'Casa Modulară Extinsă';
+    casaTitle.textContent = 'Модульный Дом Расширенный';
     openDialog();
     dateCasa(45, 2700, 6000, 11000, '../images/MODULARE/TYPES/extinsa.webp');
 });
@@ -222,61 +222,61 @@ exitButtons.forEach(button => {
 
 
 // -------- Menu -------- //
-
 const lang = document.getElementById('lang');
+
 function openMenu() {
-  menu.classList.toggle('active');
-
-  lineOne.classList.toggle('line-cross');
-  lineTwo.classList.toggle('line-fade-out');
-  lineThree.classList.toggle('line-cross');
-
-  if (menu.classList.contains('active')) {
-    document.body.style.overflow = 'hidden';
-
-    logo.src = '../images/MODULARE/logo alb.webp';
-    header.classList.toggle('menu');
-      setTimeout(() => {
+    menu.classList.toggle('active');
+  
+    lineOne.classList.toggle('line-cross');
+    lineTwo.classList.toggle('line-fade-out');
+    lineThree.classList.toggle('line-cross');
+  
+    if (menu.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+  
+      logo.src = '../images/MODULARE/logo alb.webp';
+      header.classList.toggle('menu');
+        setTimeout(() => {
+            anime({
+                targets: menuLinks,
+                translateX: [100, 0],
+                duration: 1500,
+                opacity: 1,
+                delay: anime.stagger(100)
+            });
+        }, 400);
+        lang.style.display = 'block';
           anime({
-              targets: menuLinks,
-              translateX: [100, 0],
-              duration: 1500,
+              targets: lang,
               opacity: 1,
-              delay: anime.stagger(100)
+              delay: 400
           });
-      }, 400);
-      lang.style.display = 'block';
-        anime({
-            targets: lang,
-            opacity: 1,
-            delay: 400
-        });
-  } else {
-    anime({
-        targets: lang,
-        opacity: 0,
-        duration: 200,
-        complete: () => {
-            lang.style.display = 'none';
-        }
-    });
-    
-    document.body.style.overflow = 'auto';
-
-      closeSection();
-
-      if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/MODULARE/logo negru.webp';
-      setTimeout(() => { header.classList.toggle('menu'); }, 500)
-
+    } else {
       anime({
-          targets: menuLinks,
-          translateX: 100,
-          duration: 1500,
+          targets: lang,
           opacity: 0,
-          delay: anime.stagger(100)
+          duration: 200,
+          complete: () => {
+              lang.style.display = 'none';
+          }
       });
-  }
-}
+      
+      document.body.style.overflow = 'auto';
+  
+        closeSection();
+  
+        if (!header.classList.contains('mobile') && !header.classList.contains('alt')) logo.src = '../images/MODULARE/logo negru.webp';
+        setTimeout(() => { header.classList.toggle('menu'); }, 500)
+  
+        anime({
+            targets: menuLinks,
+            translateX: 100,
+            duration: 1500,
+            opacity: 0,
+            delay: anime.stagger(100)
+        });
+    }
+  }  
 
 function closeSection() {
     const link = document.querySelector('.unfold');

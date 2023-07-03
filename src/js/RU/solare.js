@@ -13,7 +13,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'SERVICII', 'AVANTAJE', 'PROCESUL', 'PROIECTE'],
+    navigationTooltips: ['ГЛАВНАЯ', 'УСЛУГИ', 'ПРЕИМУЩЕСТВА', 'ПРОЦЕСС', 'ПРОЕКТЫ'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
@@ -254,8 +254,8 @@ panelCircles.forEach (circle => {
 
 
 // -------- Menu -------- //
-
 const lang = document.getElementById('lang');
+
 function openMenu() {
   menu.classList.toggle('active');
 

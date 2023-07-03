@@ -33,3 +33,13 @@
 #colab .glass .panel.mobile {
     backdrop-filter: blur(20px);
 }
+
+#colab .panel .circle-glass {
+    height: 70%;
+    aspect-ratio: 1/1;
+    background: rgba(0, 172, 190, 0.7);
+    filter: blur(250px);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}

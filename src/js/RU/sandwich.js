@@ -12,7 +12,7 @@ const socialMenu = document.querySelector('.social-menu');
 const page = new fullpage('#fullpage', {
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['ACASĂ', 'SERVICII', 'POSIBILITĂȚI', 'TIPURI', 'PROIECTE'],
+    navigationTooltips: ['ГЛАВНАЯ', 'УСЛУГИ', 'ВОЗМОЖНОСТИ', 'ТИПЫ', 'ПРОЕКТЫ'],
     showActiveTooltip: true,
     licenseKey: 'gplv3-license',
     responsiveWidth: 1024,
