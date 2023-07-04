@@ -28,6 +28,10 @@
     <meta property="twitter:description" content="Чистая энергия и энергетическая независимость в Молдова с солнечными панелями от SoliX. Воспользуйтесь 20-летним опытом проектирования, установки, консультирования и технического обслуживания. Низкие инвестиции, быстрая окупаемость и минимальное техническое обслуживание. Выбирайте совершенство для своих проектов!" /> 
     <meta property="twitter:image" content="../images/HOME/SoliX_facebook cover.webp" />
 
+    <!-- Language Configuration --> 
+    <link rel="alternate" hreflang="ro" href="https://solix.md/RO/fotovoltaice.html">
+    <link rel="alternate" hreflang="ru" href="https://solix.md/RU/fotovoltaice.html">
+
     <link rel="stylesheet" href="../src/css/libraries/fullpage.min.css">
     <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="../src/css/solare.css">
@@ -61,20 +65,22 @@
         <div class="particle absolute w-[10px] aspect-square rounded-full bg-[#00ACBE] left-[-10vw]"></div>
     </div>
     <header class="fixed px-[25px] lg:px-[7.5vw] w-full top-[25px] lg:top-[2.3vh] z-40">
-        <div class="wrapper px-[7vw] flex justify-center 2lg:justify-between items-center rounded-2xl py-[10px] lg:py-4 relative">
+        <div class="wrapper px-[2.5vw] flex items-center justify-center rounded-2xl py-[10px] lg:py-4 relative">
             <div class="menu-btn 2lg:hidden">
                 <div class="line line--1"></div>
                 <div class="line line--2"></div>
                 <div class="line line--3"></div>
             </div>
-            <span class="absolute left-[25px] lg:left-[1.5vw] top-1/2 -translate-y-[50%] 2lg:text-[#212121] text-base 2lg:text-sm 2xl:text-base hidden opacity-0 2lg:opacity-100 2lg:block" id="lang"><a href="../RO/fotovoltaice.html" class="hover:italic text-base 2lg:text-sm 2xl:text-base 2lg:text-[#212121] inactive">RO</a> / <a href="" class="hover:italic text-[#00ACBE] text-base 2lg:text-sm font-bold 2xl:text-base">РУ</a></span>
+            <span class="absolute left-[25px] 2lg:left-auto 2lg:right-[2.5vw] top-1/2 -translate-y-[50%] 2lg:text-[#212121] text-base 2lg:text-sm 2xl:text-base hidden opacity-0 2lg:opacity-100 2lg:block" id="lang"><a href="../RO/fotovoltaice.html" class="hover:italic text-base 2lg:text-sm 2xl:text-base 2lg:text-[#212121] inactive">RO</a> / <a href="" class="hover:italic text-[#00ACBE] text-base 2lg:text-sm font-bold 2xl:text-base">РУ</a></span>
+            <div class="min-h-[4.5vh] lg:min-h-[6.5vh] max-h-[60px]"></div>
             
-            <a href="home.html"><img src="../images/SOLARE/logo-black.webp" alt="" class="h-[4.5vh] lg:h-[6.5vh] max-h-[60px] w-auto" id="logo"></a>
-            <div class="pages 2lg:flex gap-[2.5vw] hidden text-[#212121]">
+            <a href="home.html"><img src="../images/SOLARE/logo-black.webp" alt="" class="h-[4.5vh] lg:h-[6.5vh] max-h-[60px] w-auto absolute left-1/2 -translate-x-[50%] 2lg:translate-x-0 2lg:left-[2.5vw] top-1/2 -translate-y-[50%]" id="logo"></a>
+            <div class="pages 2lg:flex gap-[1.2vw] 2xl:gap-[1.8vw] hidden text-[#212121] ml-[5vw] items-center">
                 <a href="home.html" class="font-bold opacity-75">О нас</a>
                 <a href="sandwich.html" class="font-bold opacity-75">Сэндвич Панели</a>
                 <a href="fotovoltaice.html" class="font-bold">Солнечные Панели</a>
                 <a href="modulare.html" class="font-bold opacity-75">Модульные Конструкции</a>
+                <a href="portfolio.html" class="font-bold opacity-75">Портфолио</a>
                 <a href="contacte.html" class="font-bold opacity-75">Контакты</a>
             </div>
         </div>
@@ -109,6 +115,9 @@
                 <div class="link relative">
                     <a class="font-medium 2xl:min-w-max" href="modulare.html">Модульные Конструкции</a>
                 </div>
+            </div>
+            <div class="link relative">
+                <a href="portfolio.html" class="font-bold">Портфолио</a>
             </div>
             <div class="link relative">
                 <a href="contacte.html" class="font-medium">Контакты</a>
@@ -156,7 +165,7 @@
                                     <p class="text-sm">Команда анализирует энергопотребление клиентов и выявляет эффективные решения, снижая зависимость от традиционных источников энергии.</p>
                                 </div>
                                 <div class="w-[31%] 2xl:w-[25%]">
-                                    <img src="../images/SOLARE/SERVICII/mentenanta.webp" alt="" class="h-[9vh] max-h-[72px]">
+                                    <img src="../images/SOLARE/SERVICII/mentenanta icon.webp" alt="" class="h-[9vh] max-h-[72px]">
                                     <h2 class="my-[2.3vh]">Техническое <br> Обслуживание</h2>
                                     <p class="text-sm">Наши техники проводят регулярные проверки и чистки для поддержания оптимальной производительности. Мы в любое время готовы оказать техническую поддержку и дать совет.</p>
                                 </div>
@@ -355,10 +364,12 @@
                         <a href="sandwich.html">Сэндвич Панели</a>
                         <a href="" class="text-[#f1f1f1]">Солнечные Панели</a>
                         <a href="modulare.html">Модульные Конструкции</a>
+                        <a href="portfolio.html">Портфолио</a>
                         <a href="contacte.html">Контакты</a>
                     </nav>
                     <div class="[&>p]:text-base lg:[&>p]:text-sm [&>p]:text-[#5E5E5E] px-[80px] lg:px-0 mt-[50px] lg:mt-0">
                         <p class="mb-[1vh]">+373 (69) 15 07 44</p>
+                        <p class="mb-[1vh]">+373 (60) 87 13 95</p>
                         <p class="mb-[1vh]">solixmoldova@gmail.com</p>
                         <p>мун. Chișinău, ул. Alexandru cel Bun 99</p>
                     </div>
