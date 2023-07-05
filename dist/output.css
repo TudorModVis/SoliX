@@ -762,6 +762,10 @@ video {
   z-index: 40;
 }
 
+.z-50{
+  z-index: 50;
+}
+
 .z-\[2\]{
   z-index: 2;
 }
@@ -789,6 +793,11 @@ video {
 .my-\[2\.3vh\]{
   margin-top: 2.3vh;
   margin-bottom: 2.3vh;
+}
+
+.my-\[25px\]{
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .mb-\[1\.5vh\]{
@@ -1104,34 +1113,6 @@ video {
   height: 100vh;
 }
 
-.h-\[4\.6vh\]{
-  height: 4.6vh;
-}
-
-.h-\[46vh\]{
-  height: 46vh;
-}
-
-.h-1\/2{
-  height: 50%;
-}
-
-.h-\[45\%\]{
-  height: 45%;
-}
-
-.h-\[48\%\]{
-  height: 48%;
-}
-
-.h-\[50vh\]{
-  height: 50vh;
-}
-
-.h-\[55vh\]{
-  height: 55vh;
-}
-
 .max-h-\[100px\]{
   max-height: 100px;
 }
@@ -1224,6 +1205,10 @@ video {
   width: 120%;
 }
 
+.w-\[130\%\]{
+  width: 130%;
+}
+
 .w-\[140\%\]{
   width: 140%;
 }
@@ -1308,6 +1293,10 @@ video {
   width: 35px;
 }
 
+.w-\[48\%\]{
+  width: 48%;
+}
+
 .w-\[50vw\]{
   width: 50vw;
 }
@@ -1379,38 +1368,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-\[24\%\]{
-  width: 24%;
-}
-
-.w-\[37\%\]{
-  width: 37%;
-}
-
-.w-\[22\%\]{
-  width: 22%;
-}
-
-.w-\[18\%\]{
-  width: 18%;
-}
-
-.w-\[40\%\]{
-  width: 40%;
-}
-
-.w-\[39\%\]{
-  width: 39%;
-}
-
-.w-\[38\%\]{
-  width: 38%;
-}
-
-.w-\[48\%\]{
-  width: 48%;
 }
 
 .min-w-\[75px\]{
@@ -1559,12 +1516,12 @@ video {
   gap: 2.5vw;
 }
 
-.gap-\[25px\]{
-  gap: 25px;
+.gap-\[20px\]{
+  gap: 20px;
 }
 
-.gap-\[3vw\]{
-  gap: 3vw;
+.gap-\[25px\]{
+  gap: 25px;
 }
 
 .gap-\[40px\]{
@@ -1581,14 +1538,6 @@ video {
 
 .gap-\[8vw\]{
   gap: 8vw;
-}
-
-.gap-\[1\.8vh\]{
-  gap: 1.8vh;
-}
-
-.gap-\[20px\]{
-  gap: 20px;
 }
 
 .overflow-hidden{
@@ -1862,6 +1811,11 @@ video {
   padding-bottom: 2.7vh;
 }
 
+.py-\[20px\]{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .py-\[25px\]{
   padding-top: 25px;
   padding-bottom: 25px;
@@ -1880,11 +1834,6 @@ video {
 .py-\[7px\]{
   padding-top: 7px;
   padding-bottom: 7px;
-}
-
-.py-\[20px\]{
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .pb-\[1\.5vh\]{
@@ -2521,7 +2470,7 @@ footer nav a:hover {
   height: 100%;
   content: '';
   display: block;
-  opacity: .6;
+  opacity: .35;
   background-color: #000;
   backface-visibility: hidden;
   border-radius: 10px;
@@ -2828,12 +2777,21 @@ body.fp-responsive::-webkit-scrollbar {
     margin-bottom: 1.3vh;
   }
 
+  .lg\:my-\[2\.3vh\]{
+    margin-top: 2.3vh;
+    margin-bottom: 2.3vh;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }
 
   .lg\:mb-\[2\.3vh\]{
     margin-bottom: 2.3vh;
+  }
+
+  .lg\:mb-\[2vh\]{
+    margin-bottom: 2vh;
   }
 
   .lg\:mb-\[4\.5vh\]{
@@ -2896,10 +2854,6 @@ body.fp-responsive::-webkit-scrollbar {
     margin-top: 9vh;
   }
 
-  .lg\:mb-\[2vh\]{
-    margin-bottom: 2vh;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -2934,6 +2888,14 @@ body.fp-responsive::-webkit-scrollbar {
 
   .lg\:h-\[45vh\]{
     height: 45vh;
+  }
+
+  .lg\:h-\[48\%\]{
+    height: 48%;
+  }
+
+  .lg\:h-\[55vh\]{
+    height: 55vh;
   }
 
   .lg\:h-\[58vh\]{
@@ -2971,14 +2933,6 @@ body.fp-responsive::-webkit-scrollbar {
 
   .lg\:h-full{
     height: 100%;
-  }
-
-  .lg\:h-\[48\%\]{
-    height: 48%;
-  }
-
-  .lg\:h-\[55vh\]{
-    height: 55vh;
   }
 
   .lg\:max-h-\[1080px\]{
@@ -3029,6 +2983,10 @@ body.fp-responsive::-webkit-scrollbar {
     width: 11.5vw;
   }
 
+  .lg\:w-\[18\%\]{
+    width: 18%;
+  }
+
   .lg\:w-\[2\.2vw\]{
     width: 2.2vw;
   }
@@ -3059,6 +3017,10 @@ body.fp-responsive::-webkit-scrollbar {
 
   .lg\:w-\[37px\]{
     width: 37px;
+  }
+
+  .lg\:w-\[38\%\]{
+    width: 38%;
   }
 
   .lg\:w-\[40\%\]{
@@ -3111,22 +3073,6 @@ body.fp-responsive::-webkit-scrollbar {
 
   .lg\:w-full{
     width: 100%;
-  }
-
-  .lg\:w-\[37\%\]{
-    width: 37%;
-  }
-
-  .lg\:w-\[39\%\]{
-    width: 39%;
-  }
-
-  .lg\:w-\[38\%\]{
-    width: 38%;
-  }
-
-  .lg\:w-\[18\%\]{
-    width: 18%;
   }
 
   .lg\:flex-1{
@@ -3243,6 +3189,11 @@ body.fp-responsive::-webkit-scrollbar {
     padding-right: 2.5vw;
   }
 
+  .lg\:px-\[2\.6vw\]{
+    padding-left: 2.6vw;
+    padding-right: 2.6vw;
+  }
+
   .lg\:px-\[3\.7vw\]{
     padding-left: 3.7vw;
     padding-right: 3.7vw;
@@ -3296,11 +3247,6 @@ body.fp-responsive::-webkit-scrollbar {
   .lg\:py-\[9vh\]{
     padding-top: 9vh;
     padding-bottom: 9vh;
-  }
-
-  .lg\:px-\[2\.6vw\]{
-    padding-left: 2.6vw;
-    padding-right: 2.6vw;
   }
 
   .lg\:pb-\[15px\]{

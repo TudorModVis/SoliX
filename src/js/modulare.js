@@ -314,4 +314,27 @@ sectionLinks.forEach(link => {
     link.addEventListener("click", () => {
         openMenu();
     })
-})
+});
+
+// -------- Loading -------- //
+const loadingScreens = document.querySelector('.loading');
+document.body.style.overflow = 'hidden';
+fullpage_api.setAllowScrolling(false);
+
+function stopLoading() {
+    setTimeout(() => {
+        anime({
+            targets: loadingScreens,
+            opacity: 0,
+            complete: () => {
+                fullpage_api.setAllowScrolling(true);
+                document.body.style.overflow = 'auto';
+                loadingScreens.style.display = 'none';
+            },
+            easing: 'easeInOutQuad',
+            duration: 800
+        });
+    }, 2800);
+}
+
+window.addEventListener('load', stopLoading);

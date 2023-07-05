@@ -99,3 +99,23 @@
     background: #F1F1F1;
     opacity: 1;
 }
+
+.front,
+  .back{
+      min-height: 20vh;
+      height: auto;
+  }
+
+  #submit {
+    transition: .3s;
+  }
+  
+  #submit:hover {
+    background-color: #f1f1f1;
+    color: #00ACBE;
+  }
+  
+  #submit:hover img {
+    transform: translateX(7px);
+    filter: brightness(0) saturate(100%) invert(67%) sepia(70%) saturate(6104%) hue-rotate(154deg) brightness(99%) contrast(101%);
+  }

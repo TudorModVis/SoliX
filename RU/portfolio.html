@@ -40,10 +40,13 @@
     <script src="../src/js/libraries/fullpage.min.js" defer></script>
     <script src="../src/js/libraries/anime.min.js" defer></script>
     <script src="../src/js/app.js" defer></script>
-    <script src="../src/js/portfolio.js" defer></script>
+    <script src="../src/js/RU/portfolio.js" defer></script>
 
 </head>
 <body>
+    <div class="loading fixed z-50 w-screen h-screen top-0 left-0 flex justify-center items-center bg-[#f1f1f1]">
+        <video src="../images/loading.webm" autoplay muted class="w-[150%] max-w-none lg:w-1/2"></video>
+    </div>
     <div class="social-menu fixed right-[25px] lg:right-[50px] bottom-[50px] w-[70px] aspect-square z-10">
         <div class="last w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><img src="../images/SOCIAL MENU/x.webp" alt="" class="w-[35px]"></div>
         <div class="w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><a href="viber://chat?number=+37369150744" target="_blank"><img src="../images/SOCIAL MENU/viber.webp" alt="" class="w-[30px]"></a></div>
@@ -121,44 +124,11 @@
 
     <section id="colab">
         <div class="header hidden lg:block"></div>
-        <div class="container mx-auto mt-[100px] lg:mt-[4.5vh] 2xl:mt-[7vh] mb-[50px] lg:mb-[9vh] relative">
-            <h1 class="mb-[50px] lg:mb-[9vh] lg:w-auto text-center ">Наши проекты</h1>
-            <div class="flex flex-col lg:flex-row justify-between lg:h-[55vh] gap-[20px] lg:gap-0">
-                <img src="../images/PORTFOLIO/p1.png" alt="" class="w-full lg:w-[38%] h-full object-cover rounded-2xl">
-                <div class="w-full lg:w-[18%] h-full flex lg:flex-col justify-between">
-                    <img src="../images/PORTFOLIO/p1 1.png" alt="" class="lg:h-[48%] w-[48%] lg:w-auto rounded-2xl">
-                    <img src="../images/PORTFOLIO/p1 2.png" alt="" class="lg:h-[48%] w-[48%] lg:w-auto rounded-2xl">
-                </div>
-                <div class="glass w-full lg:w-[40%] max-h-full text-[#f1f1f1]">
-                    <div class="panel w-full px-[20px] lg:px-[2.6vw] py-[20px] lg:py-[2.3vh] overflow-hidden flex flex-col lg:justify-between gap-[20px] lg:gap-0 max-h-full min-h-full">
-                        <div class="circle-glass"></div>
-                        <h3 class="text-2xl font-bold text-center lg:text-left">Frigider și Depozit Forward</h3>
-                        <div>
-                            <div class="flex justify-between mb-[2.3vh]">
-                                <div>
-                                    <h3 class="font-bold text-2xl lg:text-base 2xl:text-xl mb-[20px] lg:mb-[2vh]">Город</h3>
-                                    <p class="text-xl lg:text-base">Chișinău</p>
-                                </div>
-                                <img src="../images/MODULARE/TYPES/surface.webp" alt="" class="h-[4.5vh]">
-                            </div>
-                            <div class="flex justify-between mb-[2.3vh]">
-                                <div>
-                                    <h3 class="font-bold text-2xl lg:text-base 2xl:text-xl mb-[20px] lg:mb-[2vh]">Поверхность</h3>
-                                    <p class="text-xl lg:text-base">200 m2</p>
-                                </div>
-                                <img src="../images/SANDWICH/TYPES/grosime.webp" alt="" class="h-[4.5vh]">
-                            </div>
-                            <div class="flex justify-between">
-                                <div>
-                                    <h3 class="font-bold text-2xl lg:text-base 2xl:text-xl mb-[20px] lg:mb-[2vh]">Год постройки</h3>
-                                    <p class="text-xl lg:text-base">2021</p>
-                                </div>
-                                <img src="../images/SANDWICH/TYPES/grosime interior.webp" alt="" class="h-[4.5vh]">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container mx-auto mt-[100px] lg:mt-[4.5vh] 2xl:mt-[7vh] relative">
+            <h1 class="mb-[50px] lg:mb-[4.5vh] lg:w-auto text-center">Проекты, которыми мы гордимся</h1>
+        </div>
+        <div class="flex justify-center mb-[50px] lg:mb-[7vh] ">
+            <button class="lg:py-[2.3vh] p-[15px] lg:px-[1.6vw] bg-[#00ACBE] rounded-xl flex items-center z-10" id="submit"> <span>Больше Проектов</span> <img src="../images/HOME/Arrow.webp" alt="" class="inline ml-[10px] h-[0.65rem] transition duration-300"></button>
         </div>
         <footer class="px-[25px] lg:px-[7.5vw] flex flex-col lg:flex-row justify-between bg-[#0E0E0E] py-[50px] lg:pt-[4.5vh] lg:pb-[15px] relative rounded-t-xl lg:rounded-none">
             <div>

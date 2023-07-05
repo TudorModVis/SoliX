@@ -14,9 +14,19 @@
     transition: .3s;
 }
 
-.building button:hover img {
+.building button {
+    transition: .3s;
+  }
+  
+  .building button:hover {
+    background-color: #f1f1f1;
+    color: #00ACBE;
+  }
+  
+  .building button:hover img {
     transform: translateX(7px);
-}
+    filter: brightness(0) saturate(100%) invert(67%) sepia(70%) saturate(6104%) hue-rotate(154deg) brightness(99%) contrast(101%);
+  }
 
 #heading.active {
     opacity: 0;

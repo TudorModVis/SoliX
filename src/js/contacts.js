@@ -88,3 +88,24 @@ function sendMessage(event) {
 }
 
 sumbit.addEventListener('click', sendMessage);
+
+// -------- Loading -------- //
+const loadingScreens = document.querySelector('.loading');
+document.body.style.overflow = 'hidden';
+
+function stopLoading() {
+    setTimeout(() => {
+        anime({
+            targets: loadingScreens,
+            opacity: 0,
+            complete: () => {
+                document.body.style.overflow = 'auto';
+                loadingScreens.style.display = 'none';
+            },
+            easing: 'easeInOutQuad',
+            duration: 800
+        });
+    }, 2800);
+}
+
+window.addEventListener('load', stopLoading);

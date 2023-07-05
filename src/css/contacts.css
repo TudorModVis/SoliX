@@ -1,11 +1,23 @@
-body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #b8b9c3 #1e1e1e;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8b9c3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f1f1f1;
 }
 
 body.active {
@@ -105,8 +117,18 @@ input:-webkit-autofill{
     -webkit-text-fill-color: #f1f1f1 !important;
 }
 
+#submit {
+  transition: .3s;
+}
+
+#submit:hover {
+  background-color: #f1f1f1;
+  color: #00ACBE;
+}
+
 #submit:hover img {
   transform: translateX(7px);
+  filter: brightness(0) saturate(100%) invert(67%) sepia(70%) saturate(6104%) hue-rotate(154deg) brightness(99%) contrast(101%);
 }
 
 .glass .service {

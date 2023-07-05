@@ -438,7 +438,7 @@ footer nav a:hover {
     height: 100%;
     content: '';
     display: block;
-    opacity: .6;
+    opacity: .35;
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;

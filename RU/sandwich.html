@@ -43,6 +43,9 @@
 
 </head>
 <body>
+    <div class="loading fixed z-50 w-screen h-screen top-0 left-0 flex justify-center items-center bg-[#f1f1f1]">
+        <video src="../images/loading.webm" autoplay muted class="w-[150%] max-w-none lg:w-1/2"></video>
+    </div>
     <div class="social-menu fixed right-[25px] lg:right-[50px] bottom-[50px] w-[70px] aspect-square z-10">
         <div class="last w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><img src="../images/SOCIAL MENU/x.webp" alt="" class="w-[35px]"></div>
         <div class="w-[70px] aspect-square rounded-full bg-[#00ACBE] absolute flex justify-center items-center cursor-pointer"><a href="viber://chat?number=+37369150744" target="_blank"><img src="../images/SOCIAL MENU/viber.webp" alt="" class="w-[30px]"></a></div>
@@ -438,7 +441,7 @@
                 <div class="header hidden lg:block"></div>
                 <div class="container mt-[75px] lg:mt-[4.5vh] 2xl:mt-[7vh]">
                     <h1 class="mb-[50px] lg:mb-[4.5vh] text-left lg:text-center">Наши последние проекты</h1>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 mb-[50px] lg:mb-[4.5vh] gap-[15px] lg:gap-[10px] 2xl:gap-[25px]">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[15px] lg:gap-[10px] 2xl:gap-[25px]">
                         <div class="card">
                             <div class="front" style="background-image: url(../images/SANDWICH/PROJECTS/proiecte1.webp);">
                             </div>
@@ -499,6 +502,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="flex justify-center my-[25px] lg:my-[2.3vh]">
+                        <a href="portfolio.html"><button class="lg:py-[2.3vh] p-[15px] lg:px-[1.6vw] bg-[#00ACBE] rounded-xl flex items-center" id="submit"> <span>Больше Проектов</span> <img src="../images/HOME/Arrow.webp" alt="" class="inline ml-[10px] h-[0.65rem] transition duration-300"></button></a>
                     </div>
                 </div>
                 <footer class="px-[25px] lg:px-[7.5vw] flex flex-col lg:flex-row justify-between bg-[#0E0E0E] py-[50px] lg:pt-[4.5vh] lg:pb-[15px] relative rounded-t-xl lg:rounded-none">

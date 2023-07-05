@@ -105,7 +105,7 @@ currentLinks.forEach(link => {
 
 // -------- Glass Panels -------- //
 
-const cards = document.querySelectorAll('.glass .panel');
+let cards = document.querySelectorAll('.glass .panel');
 let currentCard, glassCircle;
 
 function enterCard(event) {
@@ -138,6 +138,8 @@ cards.forEach(card => {
     card.addEventListener('mouseleave', leaveCard);
     card.addEventListener('mousemove', moveCard);
 });
+
+// -------- Social Menu -------- //
 
 const socialMenues = document.querySelectorAll('.social-menu');
 let firstSocial;
