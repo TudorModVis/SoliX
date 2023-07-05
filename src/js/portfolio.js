@@ -252,7 +252,7 @@ function generateProjects() {
                 <img src="../images/PORTFOLIO/p${i + 1} 2.webp" alt="" class="lg:h-[48%] w-[48%] lg:w-auto rounded-2xl">
             </div>
             <div class="glass w-full lg:w-[40%] max-h-full text-[#f1f1f1]">
-                <div class="panel w-full px-[20px] lg:px-[2.6vw] py-[20px] lg:py-[2.3vh] overflow-hidden flex flex-col lg:justify-between gap-[20px] lg:gap-0 max-h-full min-h-full">
+                <div class="panel w-full px-[20px] lg:px-[2.6vw] py-[20px] lg:py-[3.7vh] overflow-hidden flex flex-col lg:justify-between gap-[20px] lg:gap-0 max-h-full min-h-full">
                     <div class="circle-glass"></div>
                     <h3 class="text-2xl font-bold text-center lg:text-left">${projects[i].titlu}</h3>
                     <div>
@@ -290,7 +290,7 @@ function generateProjects() {
                 <img src="../images/PORTFOLIO/p${i + 1} 2.webp" alt="" class="lg:h-[48%] w-[48%] lg:w-auto rounded-2xl">
             </div>
             <div class="glass w-full lg:w-[40%] max-h-full text-[#f1f1f1]">
-                <div class="panel w-full px-[20px] lg:px-[2.6vw] py-[20px] lg:py-[2.3vh] overflow-hidden flex flex-col lg:justify-between gap-[20px] lg:gap-0 max-h-full min-h-full">
+                <div class="panel w-full px-[20px] lg:px-[2.6vw] py-[20px] lg:py-[3.7vh] overflow-hidden flex flex-col lg:justify-between gap-[20px] lg:gap-0 max-h-full min-h-full">
                     <div class="circle-glass"></div>
                     <h3 class="text-2xl font-bold text-center lg:text-left">${projects[i].titlu}</h3>
                     <div>

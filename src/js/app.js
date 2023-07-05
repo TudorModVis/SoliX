@@ -182,3 +182,7 @@ socialMenues.forEach(menu => {
     first.addEventListener('click', openSocialMenu);
     last.addEventListener('click', closeSocialMenu);
 })
+
+// -------- Autoplay Video -------- //
+
+document.querySelector('.loading video').play();

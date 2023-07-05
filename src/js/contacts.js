@@ -90,6 +90,7 @@ function sendMessage(event) {
 sumbit.addEventListener('click', sendMessage);
 
 // -------- Loading -------- //
+
 const loadingScreens = document.querySelector('.loading');
 document.body.style.overflow = 'hidden';
 

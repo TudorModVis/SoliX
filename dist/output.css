@@ -3146,6 +3146,10 @@ body.fp-responsive::-webkit-scrollbar {
     gap: 6vw;
   }
 
+  .lg\:whitespace-nowrap{
+    white-space: nowrap;
+  }
+
   .lg\:rounded-2xl{
     border-radius: 1rem;
   }
@@ -3247,6 +3251,11 @@ body.fp-responsive::-webkit-scrollbar {
   .lg\:py-\[9vh\]{
     padding-top: 9vh;
     padding-bottom: 9vh;
+  }
+
+  .lg\:py-\[3\.7vh\]{
+    padding-top: 3.7vh;
+    padding-bottom: 3.7vh;
   }
 
   .lg\:pb-\[15px\]{
