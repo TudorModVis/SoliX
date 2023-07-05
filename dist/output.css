@@ -3347,6 +3347,10 @@ body.fp-responsive::-webkit-scrollbar {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .\32lg\:whitespace-nowrap{
+    white-space: nowrap;
+  }
+
   .\32lg\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -3474,6 +3478,11 @@ body.fp-responsive::-webkit-scrollbar {
   .\32xl\:py-\[4\.5vh\]{
     padding-top: 4.5vh;
     padding-bottom: 4.5vh;
+  }
+
+  .\32xl\:py-\[3\.7vh\]{
+    padding-top: 3.7vh;
+    padding-bottom: 3.7vh;
   }
 
   .\32xl\:pt-9{

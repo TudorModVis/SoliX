@@ -478,8 +478,11 @@ window.addEventListener('scroll', scrollMobile);
 
 // -------- Loading -------- //
 const loadingScreens = document.querySelector('.loading');
-document.body.style.overflow = 'hidden';
-fullpage_api.setAllowScrolling(false);
+
+if (window.innerWidth >= 1024) {
+    document.body.style.overflow = 'hidden';
+    fullpage_api.setAllowScrolling(false);
+}
 
 function stopLoading() {
     setTimeout(() => {

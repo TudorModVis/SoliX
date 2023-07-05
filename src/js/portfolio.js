@@ -353,7 +353,9 @@ generateProjects();
 
 // -------- Loading -------- //
 const loadingScreens = document.querySelector('.loading');
-document.body.style.overflow = 'hidden';
+if (window.innerWidth >= 1024) {
+    document.body.style.overflow = 'hidden';
+  }
 
 function stopLoading() {
     setTimeout(() => {
